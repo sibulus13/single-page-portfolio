@@ -65,7 +65,7 @@ const Experience: React.FC = () => {
     <div>
       {experiences.map((experience, index) => (
         <div key={experience.title} className="pt-6">
-          <p>
+          <div>
             <p>{experience.date}</p>
             <span>
               {experience.companyLink ? (
@@ -81,7 +81,7 @@ const Experience: React.FC = () => {
                 <span>{experience.company}</span>
               )}
             </span>
-          </p>
+          </div>
           <p>{experience.title}</p>
           <p>{experience.description}</p>
           {experience.tags && experience.tags.length > 0 && (
