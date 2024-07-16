@@ -5,16 +5,16 @@ const About: React.FC = () => {
     <div>
       <p>
         Back in 2016, I wrote my first program to breath life into an autonomous
-        robot for my Mechatronics degree. Seeing the impact of those lines of
-        code sparked my interest in software development. A few years later,
-        credited with a Bachelors of Applied Science in Mechatronic Systems
-        Engineering with a minor in AI, I was ready to take on the world of
-        tech.
+        robot for my degree. Seeing the impact of those lines of code sparked my
+        interest in software development, it was love at first sight. A few
+        years later, credited with a Bachelors of Applied Science in Mechatronic
+        Systems Engineering with a minor in AI, I was ready to take on the world
+        of tech.
       </p>
       <br />
       <p>
         Today, I have the privilege of amassing a diverse software development
-        journey, I have completed many project life cycles for my school, a
+        journey, having completed software project life cycles for my school, a
         leading global provider of clean energy solutions, a robotic start-up,
         and a data-driven farm wealth solutions platform.
       </p>
