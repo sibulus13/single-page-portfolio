@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import Hero from "@/components/Hero/Hero";
 import About from "@/components/About/About";
 import Experience from "@/components/Experience/Experience";
@@ -8,7 +9,8 @@ import Photo from "@/components/Photo/Photo";
 export default function Home() {
   return (
     <main>
-      <div id="home" className="py-10">
+      <Header id="home" />
+      <div className="py-10">
         <Hero />
       </div>
       <div id="about" className="py-10">

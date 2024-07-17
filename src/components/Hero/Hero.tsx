@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
       <div className="hero-content">
         <div className="grid grid-cols-2 items-center justify-center">
           <div>
-            <h1 className="text-3xl font-bold">
+            <h1 className="text-3xl font-bold sm:text-5xl">
               <strong>Michael Huang</strong>
             </h1>
             <p className="py-1">Software Engineer</p>

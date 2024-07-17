@@ -1,4 +1,7 @@
 import React from "react";
+import Link from "next/link";
+
+import { FaHome } from "react-icons/fa";
 
 const items = [
   { name: "Home", href: "#home" },
@@ -8,14 +11,20 @@ const items = [
   { name: "Photography", href: "#photography" },
   { name: "Blog", href: "#blog" },
 ];
-
+// TODO implement animation and effect for active link
 const Header: React.FC = () => {
   return (
     <nav>
-      <ul className="flex justify-between pt-3 text-xs">
+      <ul className="flex justify-between pt-3 text-xs md:text-lg items-center">
         {items.map((item) => (
           <li key={item.href}>
-            <a href={item.href}>{item.name}</a>
+            {item.name === "Home" ? (
+              <Link href={item.href} className="md:text-2xl">
+                <FaHome />
+              </Link>
+            ) : (
+              <Link href={item.href}>{item.name}</Link>
+            )}
           </li>
         ))}
       </ul>
