@@ -32,11 +32,11 @@ body {
   }
 
   .date {
-    @apply text-sm text-gray-500;
+    @apply text-sm text-gray-400;
   }
 
   .description {
-    @apply text-sm text-gray-300 py-1;
+    @apply date py-1;
   }
 
   .clickable {

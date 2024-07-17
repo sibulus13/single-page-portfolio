@@ -21,7 +21,7 @@ const Contacts: React.FC = () => {
   return (
     <div className="flex text-2xl gap-2">
       {contacts.map((contact, index) => (
-        <Link key={index} href={contact.link}>
+        <Link className="clickable" key={index} href={contact.link}>
           {contact.icon}
         </Link>
       ))}
