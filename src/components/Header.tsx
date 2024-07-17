@@ -23,7 +23,9 @@ const Header: React.FC = () => {
                 <FaHome />
               </Link>
             ) : (
-              <Link href={item.href}>{item.name}</Link>
+              <Link className="hover:text-fuchsia-800" href={item.href}>
+                {item.name}
+              </Link>
             )}
           </li>
         ))}

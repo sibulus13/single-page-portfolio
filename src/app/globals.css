@@ -36,13 +36,19 @@ body {
   }
 
   .description {
-    @apply text-sm text-gray-400 py-1;
+    @apply text-sm text-gray-300 py-1;
   }
 
-  @layer utilities {
-    .clickable {
-      @apply cursor-pointer font-bold;
-    }
+  .clickable {
+    @apply cursor-pointer font-bold hover:text-fuchsia-800;
+  }
+
+  .accent {
+    @apply text-gray-300 bg-fuchsia-800 font-semibold;
+  }
+
+  .pill {
+    @apply text-xs rounded-3xl px-2 py-1 mr-1 mb-1  inline-block;
   }
 }
 

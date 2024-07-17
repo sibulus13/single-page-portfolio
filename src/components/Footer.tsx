@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   return (
     <footer>
       <div className="py-6 flex justify-evenly items-center">
-        <Link href="#" className="text-2xl">
+        <Link href="#" className="text-2xl clickable">
           <FaHome />
         </Link>
         <div className="flex flex-col items-center">

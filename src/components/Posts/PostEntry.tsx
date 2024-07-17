@@ -16,17 +16,19 @@ export default function PostEntry(props: any) {
       style={{ backgroundImage: `url("https:${url}")` }}
     >
       <div className="bg-black bg-opacity-70 p-2 rounded-xl w-2/3">
-        <h2>{title}</h2>
-        {githubLink && (
-          <Link href={githubLink}>
-            <FaGithub />
-          </Link>
-        )}
+        <div className="flex items-center">
+          <h2 className="mr-2">{title}</h2>
+          {githubLink && (
+            <Link href={githubLink} className="clickable">
+              <FaGithub className="text-2xl" />
+            </Link>
+          )}
+        </div>
         <p className="description">{description}</p>
         <div>
           {tags.map((tag: any, index: number) => (
             <span
-              className="text-xs border border-white rounded-3xl px-2 py-1 m-1 inline-block"
+              className="accent pill"
               key={index}
             >
               {tag}

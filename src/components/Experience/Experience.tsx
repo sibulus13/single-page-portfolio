@@ -73,7 +73,7 @@ const Experience: React.FC = () => {
               {experience.companyLink ? (
                 <Link
                   href={experience.companyLink}
-                  className="flex items-center gap-1"
+                  className="flex items-center gap-1 clickable"
                 >
                   <h2>{experience.company}</h2> <AiOutlineLink />
                 </Link>
@@ -89,7 +89,7 @@ const Experience: React.FC = () => {
               {experience.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs border border-white rounded-3xl px-2 py-1 mr-2 mb-2 inline-block"
+                  className="accent pill"
                 >
                   {tag}
                 </span>
@@ -99,12 +99,11 @@ const Experience: React.FC = () => {
         </div>
       ))}
 
-      {/* TODO implement resume opening logic */}
-      {/* <div className="pt-4">
+      <div>
         <Link href="/Michael Huang Resume.pdf">
-          <p>See my full resume</p>
+          <p className="clickable">See my full resume</p>
         </Link>
-      </div> */}
+      </div>
     </div>
   );
 };
