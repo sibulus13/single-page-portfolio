@@ -4,8 +4,8 @@ import About from "@/components/About/About";
 import Experience from "@/components/Experience/Experience";
 import Projects from "@/components/Projects/Projects";
 import Photo from "@/components/Photo/Photo";
-
 import { getBlogPosts } from "@/Contentful/Contentful";
+
 let projects = await getBlogPosts('projects');
 let blogs = await getBlogPosts('adventure');
 // TODO remove min-h-400 when ALL contents are added
