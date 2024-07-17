@@ -1,4 +1,6 @@
 import React from "react";
+import Link from "next/link";
+
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 const contacts = [
   {
@@ -19,14 +21,12 @@ const Contacts: React.FC = () => {
   return (
     <div style={{ display: "flex", fontSize: "16px", gap: "4px" }}>
       {contacts.map((contact, index) => (
-        <a
+        <Link
           key={index}
           href={contact.link}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           {contact.icon}
-        </a>
+        </Link>
       ))}
     </div>
   );
