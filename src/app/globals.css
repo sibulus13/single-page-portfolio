@@ -40,23 +40,17 @@ body {
   }
 
   .clickable {
-    @apply cursor-pointer font-bold hover:text-fuchsia-800;
+    @apply cursor-pointer font-medium text-white hover:text-fuchsia-950;
   }
 
   .pill {
-    @apply text-xs rounded-3xl px-2 py-1 mr-1 mb-1 inline-block text-gray-300 bg-fuchsia-800 font-semibold;
+    @apply text-xs rounded-3xl px-2 py-1 mr-1 mb-1 inline-block text-gray-300 bg-fuchsia-950 font-semibold;
   }
 }
 
-/* 
-h1: Headings
-h2: Subheadings
-p: Paragraphs
-*/
-
 @layer base {
   h1 {
-    @apply text-2xl font-bold py-2 sm:text-4xl md:text-6xl;
+    @apply text-2xl font-bold py-2;
   }
 
   h2 {
@@ -66,12 +60,4 @@ p: Paragraphs
   p {
     @apply text-base;
   }
-}
-
-h1 {
-  font-size: 18px;
-}
-
-p {
-  font-size: 16px;
 }
