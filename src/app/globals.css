@@ -30,6 +30,34 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .date {
+    @apply text-sm text-gray-500;
+  }
+
+  .description {
+    @apply text-sm text-gray-400 py-1;
+  }
+}
+
+/* 
+h1: Headings
+h2: Subheadings
+p: Paragraphs
+*/
+
+@layer base {
+  h1 {
+    @apply text-2xl font-bold py-2;
+  }
+
+  h2 {
+    @apply text-lg font-bold;
+  }
+
+  p {
+    @apply text-base;
+  }
 }
 
 h1 {
