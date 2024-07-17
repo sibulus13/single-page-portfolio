@@ -38,6 +38,12 @@ body {
   .description {
     @apply text-sm text-gray-400 py-1;
   }
+
+  @layer utilities {
+    .clickable {
+      @apply cursor-pointer font-bold;
+    }
+  }
 }
 
 /* 

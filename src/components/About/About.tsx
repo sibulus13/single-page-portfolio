@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const About: React.FC = () => {
   return (
@@ -14,9 +15,27 @@ const About: React.FC = () => {
       <br />
       <p>
         Today, I have the privilege of amassing a diverse software development
-        journey, having completed software project life cycles for my school, a
-        leading global provider of clean energy solutions, a robotic start-up,
-        and a data-driven farm wealth solutions platform.
+        journey, having completed software project life cycles for my{" "}
+        <Link href={"https://www.sfu.ca/"}>
+          <span className="clickable">school</span>
+        </Link>
+        , a{" "}
+        <Link href={"https://www.ballard.com/"}>
+          <span className="clickable">
+            leading global provider of clean energy solutions
+          </span>
+        </Link>
+        ,{" "}
+        <Link href={"https://www.ballard.com/"}>
+          <span className="clickable">a robotic start-up</span>
+        </Link>
+        , and a{" "}
+        <Link href={"https://www.grainfox.ca/"}>
+          <span className="clickable">
+            data-driven farm wealth solutions platform
+          </span>
+        </Link>
+        .
       </p>
       <br />
       <p>
@@ -27,8 +46,12 @@ const About: React.FC = () => {
       <br />
       <p>
         When I’m not tinkering away at my computer, you can find me fidgeting
-        with photography, exploring the mountains, riding through the twisties,
-        or mastering the ukulele.
+        with{" "}
+        <Link href={"#photography"}>
+          <span className="clickable">photography</span>
+        </Link>
+        , exploring the mountains, riding through the twisties, or mastering the
+        ukulele.
       </p>
     </div>
   );
