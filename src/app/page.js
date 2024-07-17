@@ -12,7 +12,6 @@ let blogs = await getBlogPosts('adventure');
 export default async function Home() {
   return (
     <main id='#'>
-      <Header />
       <div className="py-10">
         <Hero />
       </div>
@@ -26,7 +25,7 @@ export default async function Home() {
       </div>
       <div id="projects" className="py-10">
         <h1>PROJECTS</h1>
-        <Projects content={projects} />
+        <Projects content={projects} type={'Projects'} />
       </div>
       <div id="photography" className="py-10">
         <h1>PHOTOGRAPHY</h1>
@@ -34,7 +33,7 @@ export default async function Home() {
       </div>
       <div id="blog" className="py-10">
         <h1>BLOG</h1>
-        <Projects content={blogs} />
+        <Projects content={blogs} type={'Blog'} />
       </div>
     </main>
   );
