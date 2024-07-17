@@ -1,7 +1,7 @@
 import React from "react";
 
 import PostEntry from "../Posts/PostEntry";
-import { getBlogPosts } from "@/Contentful/contentful";
+import { getBlogPosts } from "@/Contentful/Contentful";
 
 export default async function Projects({ content_type }) {
   let projects = await getBlogPosts(content_type);
