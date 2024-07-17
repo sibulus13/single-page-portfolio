@@ -1,6 +1,8 @@
 import React from "react";
+import Link from "next/link";
 import { AiOutlineLink } from "react-icons/ai";
-
+// TODO is this import required?
+// import resume from "@/public/Michael Huang Resume.pdf";
 const experiences = [
   {
     title: "Full Stack Engineer",
@@ -25,7 +27,7 @@ const experiences = [
   {
     title: "Robotic Developer",
     company: "MapaRobo",
-    // companyLink: "https://maparobo.com",
+    companyLink: "https://maparobo.com",
     date: "Oct 2021 - Mar 2022",
     description:
       "Spearheaded the design and implementation of a cross platform mobile app \
@@ -62,42 +64,32 @@ const experiences = [
 
 const Experience: React.FC = () => {
   return (
-    <div>
+    <div className="grid gap-8">
       {experiences.map((experience, index) => (
-        <div key={experience.title} className="pt-6">
+        <div key={experience.title}>
           <div>
-            <p>{experience.date}</p>
+            <p className="date">{experience.date}</p>
             <span>
               {experience.companyLink ? (
-                <a
+                <Link
                   href={experience.companyLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center"
+                  className="flex items-center gap-1"
                 >
-                  {experience.company} <AiOutlineLink />
-                </a>
+                  <h2>{experience.company}</h2> <AiOutlineLink />
+                </Link>
               ) : (
-                <span>{experience.company}</span>
+                <h2>{experience.company}</h2>
               )}
             </span>
           </div>
-          <p>{experience.title}</p>
-          <p>{experience.description}</p>
+          <h3>{experience.title}</h3>
+          <p className="description">{experience.description}</p>
           {experience.tags && experience.tags.length > 0 && (
-            <div className="pt-2 text-xs">
+            <div>
               {experience.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="tag"
-                  style={{
-                    borderRadius: "20px",
-                    border: "1px solid white",
-                    padding: "2px 5px",
-                    marginRight: "5px",
-                    display: "inline-block",
-                    marginBottom: "5px",
-                  }}
+                  className="text-xs border border-white rounded-3xl px-2 py-1 mr-2 mb-2 inline-block"
                 >
                   {tag}
                 </span>
@@ -106,6 +98,13 @@ const Experience: React.FC = () => {
           )}
         </div>
       ))}
+
+      {/* TODO implement resume opening logic */}
+      {/* <div className="pt-4">
+        <Link href="/Michael Huang Resume.pdf">
+          <p>See my full resume</p>
+        </Link>
+      </div> */}
     </div>
   );
 };
