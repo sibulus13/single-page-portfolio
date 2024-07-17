@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FaHome } from "react-icons/fa";
 
 const items = [
-  { name: "Home", href: "#home" },
+  { name: "Home", href: "" },
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
