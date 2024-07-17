@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 
 import Header from "@/components/Header";
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth">
       <body className={'w-10/12 sm:w-3/5 flex flex-col mx-auto ' + inter.className} >
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html >
