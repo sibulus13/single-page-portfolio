@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const About: React.FC = () => {
   return (
-    <div className="text-gray-300">
+    <div className="text-gray-400">
       <p>
         Back in 2016, I wrote my first program to breath life into an autonomous
         robot for my degree. Seeing the impact of those lines of code sparked my
