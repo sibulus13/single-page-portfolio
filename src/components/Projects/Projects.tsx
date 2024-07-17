@@ -1,15 +1,14 @@
+"use client";
 import React from "react";
-
+import { useEffect } from "react";
 import PostEntry from "../Posts/PostEntry";
-import { getBlogPosts } from "@/Contentful/Contentful";
 
-export default async function Projects({ content_type }) {
-  let projects = await getBlogPosts(content_type);
-  projects = projects.slice(0, 4); //Grab latest 4 projects
+export default function Projects({ content }) {
+  content  = content .slice(0, 4); //Grab latest 4 content 
 
   return (
-    <section id="projects" className="grid gap-4 md:grid-cols-2 md:pt-2">
-      {projects.map((project, index) => (
+    <section className="grid gap-4 md:grid-cols-2 md:pt-2">
+      {content .map((project, index) => (
         <PostEntry content={project} key={index} />
       ))}
     </section>
