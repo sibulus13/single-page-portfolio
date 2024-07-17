@@ -10,20 +10,20 @@ const Hero: React.FC = () => {
       <div className="hero-content">
         <div className="grid grid-cols-2 items-center justify-center">
           <div className="left-column">
-            <h1 style={{ fontSize: "30px", fontWeight: "bold" }}>
+            <h1 className="text-3xl font-bold">
               <strong>Michael Huang</strong>
             </h1>
             <p>Software Engineer</p>
             <p>Coding a better today 1 line at a time</p>
-            <div style={{ paddingTop: "4px" }}>
+            <div className="pt-4">
               <Contacts />
             </div>
           </div>
-          <div className="right-column">
+          <div className="right-column flex justify-center">
             <Image
               src={CartoonFaceshootMask}
               alt="Hero Cartoon Profile Image"
-              style={{ paddingBottom: "40px" }}
+              className="pb-10"
             />
           </div>
         </div>
