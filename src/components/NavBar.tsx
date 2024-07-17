@@ -12,13 +12,7 @@ const items = [
 const NavBar: React.FC = () => {
   return (
     <nav>
-      <ul
-        style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          paddingTop: "10px", // Add top padding of 10px
-        }}
-      >
+      <ul className="flex justify-between pt-3 text-xs">
         {items.map((item) => (
           <li key={item.href}>
             <a href={item.href}>{item.name}</a>
