@@ -9,7 +9,7 @@ const items = [
   { name: "Blog", href: "#blog" },
 ];
 
-const NavBar: React.FC = () => {
+const Header: React.FC = () => {
   return (
     <nav>
       <ul className="flex justify-between pt-3 text-xs">
@@ -23,4 +23,4 @@ const NavBar: React.FC = () => {
   );
 };
 
-export default NavBar;
+export default Header;
