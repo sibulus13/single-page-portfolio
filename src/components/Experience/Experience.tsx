@@ -89,7 +89,7 @@ const Experience: React.FC = () => {
               {experience.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="accent pill"
+                  className="pill"
                 >
                   {tag}
                 </span>

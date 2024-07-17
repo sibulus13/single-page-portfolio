@@ -43,12 +43,8 @@ body {
     @apply cursor-pointer font-bold hover:text-fuchsia-800;
   }
 
-  .accent {
-    @apply text-gray-300 bg-fuchsia-800 font-semibold;
-  }
-
   .pill {
-    @apply text-xs rounded-3xl px-2 py-1 mr-1 mb-1  inline-block;
+    @apply text-xs rounded-3xl px-2 py-1 mr-1 mb-1 inline-block text-gray-300 bg-fuchsia-800 font-semibold;
   }
 }
 

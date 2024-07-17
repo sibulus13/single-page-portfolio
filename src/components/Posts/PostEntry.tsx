@@ -28,7 +28,7 @@ export default function PostEntry(props: any) {
         <div>
           {tags.map((tag: any, index: number) => (
             <span
-              className="accent pill"
+              className="pill"
               key={index}
             >
               {tag}
