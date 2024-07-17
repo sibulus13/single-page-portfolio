@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
             <h1 className="text-3xl font-bold sm:text-5xl">
               <strong>Michael Huang</strong>
             </h1>
-            <p className="py-1">Software Engineer</p>
+            <p className="py font-medium">Software Engineer</p>
             <p className="description">
               Coding a better today 1 line at a time
             </p>
