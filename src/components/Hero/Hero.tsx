@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import Contacts from "./Contacts";
-import CartoonFaceshootMask from "@public/cartoon profile.png";
+import CartoonFaceshootMask from "public/cartoon profile.png";
 
 const Hero: React.FC = () => {
   return (
