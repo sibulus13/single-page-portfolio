@@ -44,7 +44,7 @@ body {
   }
 
   .pill {
-    @apply text-xs rounded-3xl px-2 py-1 mr-1 mb-1 inline-block text-gray-300 bg-fuchsia-950 font-semibold;
+    @apply text-xs rounded-3xl px-2 py-1 mr-1 mb-1 inline-block text-gray-400 bg-fuchsia-950 font-medium;
   }
 }
 
