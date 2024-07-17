@@ -8,8 +8,8 @@ import Photo from "@/components/Photo/Photo";
 // TODO remove min-h-400 when ALL contents are added
 export default function Home() {
   return (
-    <main>
-      <Header id="home" />
+    <main id='#'>
+      <Header />
       <div className="py-10">
         <Hero />
       </div>
