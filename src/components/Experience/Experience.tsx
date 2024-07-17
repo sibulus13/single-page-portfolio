@@ -54,10 +54,10 @@ const experiences = [
       "https://www.sfu.ca/fas/news-and-outreach/years/2013/sticks-and-stars.html",
     date: "Summer 2016, 2017",
     description:
-      "Instructed cohorts of 25+ students in \
-    robotic design, implementaion, and programming. \
-    Led multiple teams through the project life cycle \
-    to build and program autonomous robots.",
+      "Instructed 25+ students cohorts in \
+    functional design, implementation, and programming. \
+    Mentored up to 6 teams simultaneously through the project life cycle \
+    to build and code autonomous robots.",
     tags: ["RobotC", "Teaching", "Project Management"],
   },
 ];
