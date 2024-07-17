@@ -32,7 +32,7 @@ const experiences = [
     description:
       "Spearheaded the design and implementation of a cross platform mobile app \
     that enabled users to monitor and control their robots remotely. \
-    Worked closely with Product Managers, developers, and engineers \
+    Worked closely with product managers, developers, and engineers \
     to refine project requirements.",
     tags: ["JavaScript", "Python", "React Native", "HTML & CSS", "ROS"],
   },
