@@ -10,7 +10,7 @@ export default async function Projects({ content_type }) {
   return (
     <section
       id="projects"
-      className="grid gap-4 md:grid-cols-2 md:pt-2"
+      className="grid gap-4 lg:grid-cols-2 md:pt-2"
     >
       {projects.map((project, index) => (
         <PostEntry content={project} key={index} />
