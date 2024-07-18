@@ -46,6 +46,11 @@ body {
   .pill {
     @apply text-xs rounded-3xl px-2 py-1 mr-1 mb-1 inline-block text-gray-400 bg-fuchsia-950 font-medium;
   }
+/* TODO set this up properly */
+  .experience {
+    @apply transition-transform duration-300 ease-in-out rounded-3xl  peer-hover:border-fuchsia-950;
+    @apply hover:border hover:border-fuchsia-950;
+  }
 }
 
 @layer base {

@@ -66,7 +66,7 @@ const Experience: React.FC = () => {
   return (
     <div className="grid gap-8">
       {experiences.map((experience, index) => (
-        <div key={experience.title}>
+        <div key={experience.title} className="experience peer border p-8">
           <div>
             <p className="date">{experience.date}</p>
             <span>
@@ -87,10 +87,7 @@ const Experience: React.FC = () => {
           {experience.tags && experience.tags.length > 0 && (
             <div>
               {experience.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="pill"
-                >
+                <span key={tag} className="pill">
                   {tag}
                 </span>
               ))}
