@@ -9,10 +9,7 @@ export default function Footer() {
         <Link href="" className="text-2xl clickable">
           <FaArrowUp />
         </Link>
-        <div className="flex flex-col items-center">
-          <p className="description">Made in Canada</p>
-          <p className="description">© 2024 Michael Huang</p>
-        </div>
+        <p className="description">Made in Canada</p>
         {/* TODO Implement get in touch animation & logic */}
         {/* <div>
           <Link href="">
