@@ -1,14 +1,13 @@
 import React from "react";
 import Link from "next/link";
 
-import { FaHome } from "react-icons/fa";
-
-const Footer: React.FC = () => {
+import { FaArrowUp } from "react-icons/fa";
+export default function Footer() {
   return (
     <footer>
       <div className="py-6 flex justify-evenly items-center">
         <Link href="" className="text-2xl clickable">
-          <FaHome />
+          <FaArrowUp />
         </Link>
         <div className="flex flex-col items-center">
           <p className="description">Made in Canada</p>
@@ -23,6 +22,4 @@ const Footer: React.FC = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
