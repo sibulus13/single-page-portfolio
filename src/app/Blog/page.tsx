@@ -6,9 +6,9 @@ import { getBlogPosts } from "@/Contentful/Contentful";
 const type = "adventure";
 const parentPath = "Blog";
 const Page: React.FC = async () => {
-  const posts = await getBlogPosts(type);
-  posts.sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date));
-
+  let posts = await getBlogPosts(type);
+  posts.sort((a, b) => new Date(b.fields.date as string).getTime() - new Date(a.fields.date as string).getTime());
+  
   return (
     <div className="pt-10">
       <h1>Blogs</h1>
