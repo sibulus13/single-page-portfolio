@@ -11,6 +11,7 @@ export default function PostEntry(props: any) {
   const githubLink = content.fields.githubLink ?? null;
 
   return (
+    // TODO this link seems to cause hydration failure
     <Link
       href={{
         pathname: `/${parentPath}/` + title,
