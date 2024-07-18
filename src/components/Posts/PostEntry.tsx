@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 export default function PostEntry(props: any) {
   const { content, parentPath } = props;
@@ -10,8 +12,13 @@ export default function PostEntry(props: any) {
   const tags = content.fields.tags ?? [];
   const githubLink = content.fields.githubLink ?? null;
 
+  const router = useRouter();
+  const toGithub = () => {
+    // Without this, a nested link would cause hydration failure
+    router.push(githubLink);
+  };
+
   return (
-    // TODO this link seems to cause hydration failure
     <Link
       href={{
         pathname: `/${parentPath}/` + title,
@@ -26,9 +33,15 @@ export default function PostEntry(props: any) {
         <div className="flex items-center">
           <h2 className="mr-2">{title}</h2>
           {githubLink && (
-            <Link href={githubLink} className="clickable">
+            <button
+              onClick={(e) => {
+                toGithub();
+                e.stopPropagation();
+              }}
+              className="clickable"
+            >
               <FaGithub className="text-2xl" />
-            </Link>
+            </button>
           )}
         </div>
         <p className="description">{description}</p>
