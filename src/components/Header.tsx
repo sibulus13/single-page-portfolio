@@ -1,7 +1,11 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaAngleLeft } from "react-icons/fa";
 
 const items = [
   { name: "Home", href: "" },
@@ -13,23 +17,37 @@ const items = [
 ];
 // TODO implement animation and effect for active link
 const Header: React.FC = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const isHomePg = pathname === "/";
   return (
-    <nav className="sticky top-3 p-2 rounded-3xl backdrop-filter backdrop-blur-3xl">
-      <ul className="flex justify-between text-xs md:text-lg items-center">
-        {items.map((item) => (
-          <li key={item.href}>
-            {item.name === "Home" ? (
-              <Link href={item.href} className="md:text-2xl">
-                <FaHome />
-              </Link>
-            ) : (
-              <Link className="hover:text-fuchsia-800" href={item.href}>
-                {item.name}
-              </Link>
-            )}
-          </li>
-        ))}
-      </ul>
+    <nav className="sticky top-3 p-2 rounded-3xl backdrop-filter backdrop-blur-3xl text-xs md:text-lg ">
+      {isHomePg ? (
+        <ul className="flex justify-between items-center">
+          {items.map((item) => (
+            <li key={item.href}>
+              {item.name === "Home" ? (
+                <Link href={item.href} className="md:text-2xl">
+                  <FaHome />
+                </Link>
+              ) : (
+                <Link className="hover:text-fuchsia-800" href={item.href}>
+                  {item.name}
+                </Link>
+              )}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className="flex justify-between">
+          <Link href={"/"} className="md:text-2xl">
+            <FaHome />
+          </Link>
+          <button onClick={router.back}>
+            <FaAngleLeft />
+          </button>
+        </div>
+      )}
     </nav>
   );
 };
