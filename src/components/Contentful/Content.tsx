@@ -2,10 +2,11 @@ import React from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { options } from "@/Contentful/Contentful";
 import { getPostContent } from "@/Contentful/Contentful";
+import { Document } from "@contentful/rich-text-types";
 
 export default async function ContentfulContent({ id }: { id: string }) {
   const res = await getPostContent(id);
-  const { title, description, content } = res.fields as {
+  const { title, description, content } = res.fields as unknown as {
     title: string;
     description: string;
     content: Document;
