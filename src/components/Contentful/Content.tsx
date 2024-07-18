@@ -6,19 +6,21 @@ import { Document } from "@contentful/rich-text-types";
 
 export default async function ContentfulContent({ id }: { id: string }) {
   const res = await getPostContent(id);
-  const { title, description, content } = res.fields as unknown as {
+  const { title, description, content, date } = res.fields as unknown as {
     title: string;
     description: string;
     content: Document;
+    date: string;
   };
 
   return (
     <div className="py-10">
-      <div className="px-10 lg:w-1/2 mx-auto">
+      <div className="px-10 lg:w-2/3 mx-auto">
+        <p className="date">{new Date(date).toLocaleDateString()}</p>
         <div className="flex justify-between">
           <h1>{title}</h1>
         </div>
-        <h3>{description}</h3>
+        <p className="description">{description}</p>
         <div className="border-b-2 border-white"></div>
         <div>{documentToReactComponents(content, options)}</div>
       </div>

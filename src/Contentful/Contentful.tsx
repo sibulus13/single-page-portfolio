@@ -70,7 +70,7 @@ export const options = {
     [BLOCKS.EMBEDDED_ASSET]: (node: any) => (
       <div>
         <br />
-        <div className="mx-auto">
+        <div className="mx-auto w-2/3">
           <Image
             className="rounded-lg object-contain"
             src={"https:" + node.data.target.fields.file.url}
