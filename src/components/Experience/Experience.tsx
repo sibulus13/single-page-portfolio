@@ -64,9 +64,9 @@ const experiences = [
 
 const Experience: React.FC = () => {
   return (
-    <div className="grid gap-8">
+    <div className="grid gap-4 py-8">
       {experiences.map((experience, index) => (
-        <div key={experience.title} className="experience peer border p-8">
+        <div key={experience.title} className="experience -mx-4">
           <div>
             <p className="date">{experience.date}</p>
             <span>
