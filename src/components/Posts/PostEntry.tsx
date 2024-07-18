@@ -26,7 +26,7 @@ export default function PostEntry(props: any) {
           id: id,
         },
       }}
-      className="bg-cover bg-center aspect-square rounded-3xl flex justify-center items-center"
+      className="bg-cover bg-center aspect-square rounded-3xl flex justify-center items-center hover:scale-95 transition-transform duration-300"
       style={{ backgroundImage: `url("https:${url}")` }}
     >
       <div className="bg-black bg-opacity-70 p-2 rounded-xl w-2/3">
