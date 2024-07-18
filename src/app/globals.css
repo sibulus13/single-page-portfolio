@@ -49,6 +49,10 @@ body {
 }
 
 @layer base {
+  body {
+    @apply scroll-smooth;
+  }
+
   h1 {
     @apply text-2xl font-bold py-2;
   }
