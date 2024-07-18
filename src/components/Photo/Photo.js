@@ -9,7 +9,7 @@ import Img5 from "public/Photos/5.jpg";
 import Img6 from "public/Photos/6.jpg";
 
 const Imgs = [Img1, Img2, Img6, Img4, Img5, Img3];
-const Photo: React.FC = () => {
+const Photo = () => {
   return (
     <div>
       {Imgs.map((img, index) => {
