@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Michael Huang's Portfolio Page",
-  description: "Designed in Figma, created using Next.js, Tailwind CSS, and GenAI.",
+  description: "Designed in Figma, built using Next.js, Tailwind CSS, and a moderate dose of GenAI.",
 };
 
 export default function RootLayout({ children }) {
