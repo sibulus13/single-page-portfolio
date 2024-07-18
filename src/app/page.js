@@ -8,6 +8,8 @@ import { getBlogPosts } from "@/Contentful/Contentful";
 
 let projects = await getBlogPosts('projects');
 let blogs = await getBlogPosts('adventure');
+projects.sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date));
+blogs.sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date));
 // TODO remove min-h-400 when ALL contents are added
 export default async function Home() {
   return (

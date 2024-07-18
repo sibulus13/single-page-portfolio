@@ -5,8 +5,10 @@ import { getBlogPosts } from "@/Contentful/Contentful";
 
 const type = "adventure";
 const parentPath = "Blog";
-const Projects: React.FC = async () => {
+const Page: React.FC = async () => {
   const posts = await getBlogPosts(type);
+  posts.sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date));
+
   return (
     <div className="pt-10">
       <h1>Blogs</h1>
@@ -21,4 +23,4 @@ const Projects: React.FC = async () => {
   );
 };
 
-export default Projects;
+export default Page;
