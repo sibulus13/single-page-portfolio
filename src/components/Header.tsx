@@ -21,7 +21,7 @@ const Header: React.FC = () => {
   const pathname = usePathname();
   const isHomePg = pathname === "/";
   return (
-    <nav className="sticky top-3 p-2 rounded-3xl backdrop-filter backdrop-blur-3xl text-xs md:text-lg">
+    <nav className="sticky top-3 p-2 rounded-3xl backdrop-filter backdrop-blur-3xl text-xs md:text-lg z-10">
       {isHomePg ? (
         <ul className="flex justify-between items-center">
           {items.map((item) => (
