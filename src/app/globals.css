@@ -42,7 +42,7 @@ body {
   .experience {
     @apply rounded-3xl p-4;
   }
-  
+
   .experience:hover {
     @apply transition-transform duration-300 ease-in-out bg-gray-900;
   }
