@@ -13,27 +13,27 @@ blogs.sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date));
 // TODO remove min-h-400 when ALL contents are added
 export default async function Home() {
   return (
-    <main id='#'>
-      <div className="py-10">
+    <main id='#' className="grid gap-40">
+      <div>
         <Hero />
       </div>
-      <div id="about" className="py-10">
+      <div id="about">
         <h1>ABOUT</h1>
         <About />
       </div>
-      <div id="experience" className="py-10">
+      <div id="experience">
         <h1>EXPERIENCE</h1>
         <Experience />
       </div>
-      <div id="projects" className="py-10">
+      <div id="projects">
         <h1>PROJECTS</h1>
         <Projects content={projects} type={'Projects'} />
       </div>
-      <div id="photography" className="py-10">
+      <div id="photography">
         <h1>PHOTOGRAPHY</h1>
         <Photo />
       </div>
-      <div id="blog" className="py-10">
+      <div id="blog">
         <h1>BLOG</h1>
         <Projects content={blogs} type={'Blog'} />
       </div>
