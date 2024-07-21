@@ -29,11 +29,11 @@ const Header: React.FC = () => {
             {items.map((item) => (
               <li key={item.href}>
                 {item.name === "Home" ? (
-                  <Link href={item.href} className="md:text-2xl">
+                  <Link href={item.href} className="md:text-2xl clickable">
                     <FaHome />
                   </Link>
                 ) : (
-                  <Link className="hover:text-fuchsia-800" href={item.href}>
+                  <Link className="clickable" href={item.href}>
                     {item.name}
                   </Link>
                 )}

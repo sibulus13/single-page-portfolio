@@ -14,7 +14,7 @@ export default function Projects({ content, type }) {
       <div>
         <Link
           href={`/${type}`}
-          className=" clickable font-medium rounded-3xl px-2 py-1 hover:bg-gray-400 hover:text-fuchsia-950"
+          className=" clickable font-medium"
         >
           See More
         </Link>

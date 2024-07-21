@@ -19,9 +19,6 @@ body {
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
 
   .accent {
     @apply text-gray-300;
@@ -36,7 +33,7 @@ body {
   }
 
   .clickable {
-    @apply cursor-pointer font-medium text-white hover:text-fuchsia-950;
+    @apply cursor-pointer font-medium text-white hover:text-fuchsia-900;
   }
 
   .pill {
