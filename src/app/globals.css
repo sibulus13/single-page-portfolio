@@ -33,7 +33,7 @@ body {
   }
 
   .clickable {
-    @apply cursor-pointer font-medium text-white hover:text-fuchsia-900;
+    @apply cursor-pointer font-medium text-white hover:lg:text-fuchsia-900;
   }
 
   .pill {

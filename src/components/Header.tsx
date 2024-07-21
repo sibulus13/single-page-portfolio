@@ -21,7 +21,7 @@ const Header: React.FC = () => {
   const pathname = usePathname();
   const isHomePg = pathname === "/";
   return (
-    <div className="sticky top-0 -mx-9 z-10 flex flex-col">
+    <div className="sticky top-0 -mx-6 lg:-mx-9 z-10 flex flex-col">
       <div className="bg-black p-2"></div>
       <nav className=" p-2 rounded-full backdrop-filter backdrop-blur-3xl text-xs md:text-lg">
         {isHomePg ? (
