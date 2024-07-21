@@ -10,8 +10,8 @@ let projects = await getBlogPosts('projects');
 let blogs = await getBlogPosts('adventure');
 projects.sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date));
 blogs.sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date));
-// TODO remove min-h-400 when ALL contents are added
-export default async function Home() {
+
+export default function Home() {
   return (
     <main id='#' className="grid gap-32">
       <div className="pt-10">
