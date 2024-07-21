@@ -13,8 +13,8 @@ blogs.sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date));
 // TODO remove min-h-400 when ALL contents are added
 export default async function Home() {
   return (
-    <main id='#' className="grid gap-40">
-      <div>
+    <main id='#' className="grid gap-32">
+      <div className="pt-10">
         <Hero />
       </div>
       <div id="about">

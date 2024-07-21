@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import Contacts from "./Contacts";
-import CartoonFaceshootMask from "public/cartoon profile.png";
+import CartoonFaceshootMask from "public/profile.png";
 
 const Hero: React.FC = () => {
   return (
@@ -25,7 +25,6 @@ const Hero: React.FC = () => {
             <Image
               src={CartoonFaceshootMask}
               alt="Hero Cartoon Profile Image"
-              className="pb-10"
             />
           </div>
         </div>
