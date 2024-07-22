@@ -15,11 +15,16 @@ To get started with this project, follow these steps:
 4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
 
 ## Gallery
+<center>
+
 ![Desktop Screenshot](public/Desktop%20Hero%20view.png)
-Desktop Screenshot
+<p>Desktop Screenshot</p>
+<br>
 
 ![Mobile Screenshot](public/Mobile%20Hero%20view.png)
-Mobile Screenshot
+<p>Mobile Screenshot</p>
+
+</center>
 
 ## References
 Inspiration for this portfolio includes, but are not limited to:
