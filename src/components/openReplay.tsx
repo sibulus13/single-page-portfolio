@@ -1,11 +1,7 @@
 "use client";
 import { useEffect } from "react";
-import Tracker from "@openreplay/tracker";
 import { env } from "process";
-
-const tracker = new Tracker({
-  projectKey: env.OPEN_REPLAY_PROJECT_KEY,
-});
+import { tracker } from "@/OpenReplay/OpenReplay";
 
 const Openreplay = () => {
   useEffect(() => {
