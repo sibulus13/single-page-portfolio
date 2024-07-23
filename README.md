@@ -1,7 +1,7 @@
 # Personal Portfolio
 Live site can be found at [Michaelhuang.ca](Michaelhuang.ca).
 
-Designed with Figma, built with Next.js, content served with Contentful, and deployed with Vercel.
+Deszigned using Figma, built with Next.js, styled with Tailwind CSS, served with Contentful, and deployed with Vercel.
 
 ## Motivation
 My first few portfolios were a creative abstraction at best in terms of design. Having the privilege of experiencing the efficiency of development that comes with well designed mockups from working with expert designers, I challenged myself to create this portfolio in adherence to a full Software Development Lifecycle (SDLC).
