@@ -1,8 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { AiOutlineLink } from "react-icons/ai";
-// TODO is this import required?
-// import resume from "@/public/Michael Huang Resume.pdf";
+
 const experiences = [
   {
     title: "Full Stack Engineer",
