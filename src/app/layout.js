@@ -17,13 +17,17 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Michael Huang's Portfolio",
   description: "Planned with Notion, designed with Figma, \
-  built using Next.js, Tailwind CSS, and a moderate dose of GenAI.",
+  built using Next.js, styled using Tailwind CSS, and created with the help of a moderate dose of ChatGPT.",
 };
 
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <meta charSet="utf-8" />
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body className={'px-10 lg:px-40 grid mx-auto ' + inter.className} >
         <Header />
         {children}
