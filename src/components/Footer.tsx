@@ -10,12 +10,6 @@ export default function Footer() {
           <FaArrowUp />
         </Link>
         <p className="description">Made in Canada</p>
-        {/* TODO Implement get in touch animation & logic */}
-        {/* <div>
-          <Link href="">
-            <p className="description">Get in touch</p>
-          </Link>
-        </div> */}
       </div>
     </footer>
   );
