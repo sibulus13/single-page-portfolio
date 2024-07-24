@@ -18,7 +18,7 @@ const Header: React.FC = () => {
     <div className="sticky top-0 -mx-6 lg:-mx-9 z-10 flex flex-col">
       <div className="bg-black p-2"></div>
       <nav className="rounded-full backdrop-filter backdrop-blur-3xl">
-        <ul className="p-2 px-6 lg:px-8 flex justify-between items-center gap-1 text-xs md:text-lg">
+        <ul className="p-2 px-6 lg:px-8 flex justify-between items-center gap-1 text-sm md:text-lg">
           {items.map((item) => (
             <li key={item.href}>
               {item.name === "Home" ? (
