@@ -24,7 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={'w-10/12 sm:w-4/5 lg:w-3/5 flex flex-col mx-auto ' + inter.className} >
+      <body className={'px-10 lg:px-40 grid mx-auto ' + inter.className} >
         <Header />
         {children}
         <OpenReplayNoSSR />
