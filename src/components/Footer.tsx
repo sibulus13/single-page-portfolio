@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="py-6 flex justify-evenly items-center">
-        <Link href="" className="text-2xl clickable">
+        <Link href="#home" className="text-2xl clickable">
           <FaArrowUp />
         </Link>
         <p className="description">Made in Canada</p>
