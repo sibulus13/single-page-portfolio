@@ -25,6 +25,7 @@ const Hero: React.FC = () => {
             <Image
               src={CartoonFaceshootMask}
               alt="Low poly hero picture"
+              objectFit="contain"
             />
           </div>
         </div>
