@@ -18,8 +18,25 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-@layer utilities {
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
 
+  h1 {
+    @apply text-2xl font-bold py-2;
+  }
+
+  h2 {
+    @apply text-lg font-bold;
+  }
+
+  p {
+    @apply text-base;
+  }
+}
+
+@layer utilities {
   .accent {
     @apply text-gray-300;
   }
@@ -37,7 +54,7 @@ body {
   }
 
   .pill {
-    @apply text-xs rounded-3xl px-2 py-1 mr-1 mb-1 inline-block accent bg-fuchsia-950 font-medium;
+    @apply text-xs rounded-3xl text-center px-2 py-1 mr-1 mb-1 inline-block accent bg-fuchsia-950 font-medium;
   }
 
   .experience {
@@ -46,23 +63,5 @@ body {
 
   .experience:hover {
     @apply transition-transform duration-300 ease-in-out bg-gray-900;
-  }
-}
-
-@layer base {
-  body {
-    @apply scroll-smooth;
-  }
-
-  h1 {
-    @apply text-2xl font-bold py-2;
-  }
-
-  h2 {
-    @apply text-lg font-bold;
-  }
-
-  p {
-    @apply text-base;
   }
 }
