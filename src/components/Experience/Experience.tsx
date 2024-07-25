@@ -73,6 +73,8 @@ const Experience: React.FC = () => {
                 <Link
                   href={experience.companyLink}
                   className="flex items-center gap-1 clickable"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <h2>{experience.company}</h2> <AiOutlineLink />
                 </Link>
@@ -96,7 +98,11 @@ const Experience: React.FC = () => {
       ))}
 
       <div>
-        <Link href="/Michael Huang Resume.pdf">
+        <Link
+          href="/Michael Huang Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <p className="clickable">See my full resume</p>
         </Link>
       </div>
