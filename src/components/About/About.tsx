@@ -50,7 +50,7 @@ const About: React.FC = () => {
         <Link href={"#photography"}>
           <span className="clickable">photography</span>
         </Link>
-        , exploring the mountains, riding through the twisties, or mastering the
+        , exploring the mountains, riding through the twisties, or being whimsical with the
         ukulele.
       </p>
     </div>
