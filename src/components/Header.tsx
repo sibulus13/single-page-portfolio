@@ -11,7 +11,7 @@ const items = [
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
-  { name: "Photos", href: "#photography" },
+  { name: "Gallery", href: "#photography" },
   { name: "Blog", href: "#blog" },
 ];
 

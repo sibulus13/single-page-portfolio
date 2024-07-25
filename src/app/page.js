@@ -29,7 +29,7 @@ export default function Home() {
         <Projects content={projects} type={'Projects'} />
       </div>
       <div id="photography">
-        <h1 className="pt-20 lg:pt-24">PHOTOGRAPHY</h1>
+        <h1 className="pt-20 lg:pt-24">GALLERY</h1>
         <Photo />
       </div>
       <div id="blog">
