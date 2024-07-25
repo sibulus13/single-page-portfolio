@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
           <div className="flex justify-center md:p-10 lg:p-20">
             <Image
               src={CartoonFaceshootMask}
-              alt="Hero Cartoon Profile Image"
+              alt="Low poly hero picture"
             />
           </div>
         </div>
