@@ -45,6 +45,13 @@ const Header: React.FC = () => {
             <Link href={"/"} className="md:text-2xl">
               <FaHome />
             </Link>
+            <button
+              className="clickable"
+              onClick={() => router.back()}
+              title="Go back"
+            >
+              <FaAngleLeft />
+            </button>
           </div>
         )}
       </nav>
