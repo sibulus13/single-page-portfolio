@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
               <Contacts />
             </div>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center md:p-10 lg:p-20">
             <Image
               src={CartoonFaceshootMask}
               alt="Hero Cartoon Profile Image"
