@@ -42,9 +42,6 @@ const Header: React.FC = () => {
           </ul>
         ) : (
           <div className="flex justify-between">
-            <Link href={"/"} className="md:text-2xl">
-              <FaHome />
-            </Link>
             <button
               className="clickable"
               onClick={() => router.back()}
