@@ -3,8 +3,8 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
-
 import { FaHome, FaAngleLeft } from "react-icons/fa";
+import ThemeSwitch from "./ThemeSwitcher";
 
 const items = [
   { name: "Home", href: "/" },
@@ -38,6 +38,9 @@ const Header: React.FC = () => {
                 )}
               </li>
             ))}
+            <li>
+              <ThemeSwitch />
+            </li>
           </ul>
         ) : (
           <div className="flex justify-between">
@@ -48,6 +51,7 @@ const Header: React.FC = () => {
             >
               <FaAngleLeft />
             </button>
+            <ThemeSwitch />
           </div>
         )}
       </nav>

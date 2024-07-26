@@ -22,7 +22,7 @@ export default function PostEntry(props: any) {
         className="bg-cover bg-center aspect-square rounded-3xl flex justify-center items-center transition duration-300 group-hover:scale-95 group-hover:opacity-60"
         style={{ backgroundImage: `url("https:${url}")` }}
       ></Link>
-      <div className="bg-black bg-opacity-70 p-2 rounded-xl w-4/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+      <div className="bg-white dark:bg-black bg-opacity-70 p-2 rounded-xl w-4/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
         <div className="flex items-center">
           <h2 className="mr-2">{title}</h2>
           {githubLink && (

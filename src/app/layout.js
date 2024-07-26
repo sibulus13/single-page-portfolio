@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import { Providers } from "./provider";
 
 import "./globals.css";
 
@@ -22,12 +23,14 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/icon.ico" sizes="any" />
       </Head>
       <body id='home' className={'p-4 px-10 lg:px-40 grid mx-auto scroll-p-44' + inter.className} >
-        <Header />
-        {children}
-        <OpenReplayNoSSR />
-        <Analytics />
-        <SpeedInsights />
-        <Footer />
+        <Providers>
+          <Header />
+          {children}
+          <OpenReplayNoSSR />
+          <Analytics />
+          <SpeedInsights />
+          <Footer />
+        </Providers>
       </body>
     </html >
   );

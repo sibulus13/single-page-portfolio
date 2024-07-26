@@ -21,7 +21,7 @@ export default async function ContentfulContent({ id }: { id: string }) {
           <h1>{title}</h1>
         </div>
         <p className="description">{description}</p>
-        <div className="border-b-2 border-white"></div>
+        <div className="border-b-2 border-black dark:border-white"></div>
         <div>{documentToReactComponents(content, options)}</div>
       </div>
     </div>
