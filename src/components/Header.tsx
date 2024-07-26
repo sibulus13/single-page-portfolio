@@ -22,8 +22,7 @@ const Header: React.FC = () => {
   const isHomePg = pathname === "/";
   return (
     <div className="sticky top-0 -mx-5 lg:-mx-9 z-10 flex flex-col">
-      <div className="bg-black p-2"></div>
-      <nav className=" p-2 px-4 rounded-full backdrop-filter backdrop-blur-3xl text-xs md:text-lg">
+      <nav className="p-2 px-4 rounded-full backdrop-filter backdrop-blur-3xl text-xs md:text-lg">
         {isHomePg ? (
           <ul className="flex justify-between items-center gap-1">
             {items.map((item) => (

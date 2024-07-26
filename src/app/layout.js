@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
       <Head>
         <link rel="icon" href="/icon.ico" sizes="any" />
       </Head>
-      <body id='home' className={'px-10 lg:px-40 grid mx-auto ' + inter.className} >
+      <body id='home' className={'p-4 px-10 lg:px-40 grid mx-auto scroll-p-44' + inter.className} >
         <Header />
         {children}
         <OpenReplayNoSSR />
