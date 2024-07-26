@@ -19,7 +19,7 @@ export default function ThemeSwitch() {
   if (currentTheme === "dark") {
     return (
       <SunIcon
-        className="h-4 w-4 md:h-6 md:w-6"
+        className="h-4 w-4 md:h-6 md:w-6 clickable"
         onClick={() => setTheme("light")}
       />
     );
@@ -28,7 +28,7 @@ export default function ThemeSwitch() {
   if (currentTheme === "light") {
     return (
       <MoonIcon
-        className="h-4 w-4 md:h-6 md:w-6 text-gray-900"
+        className="h-4 w-4 md:h-6 md:w-6 text-gray-900 clickable"
         onClick={() => setTheme("dark")}
       />
     );

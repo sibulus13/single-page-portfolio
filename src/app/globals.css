@@ -46,7 +46,7 @@
   }
 
   .pill {
-    @apply text-xs rounded-3xl text-center px-2 py-1 mr-1 mb-1 inline-block accent bg-sky-300 dark:bg-fuchsia-950 font-medium;
+    @apply text-xs rounded-3xl text-center px-2 py-1 mr-1 mb-1 inline-block accent bg-sky-400 dark:bg-fuchsia-950 font-medium;
   }
 
   .experience {
