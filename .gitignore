@@ -40,3 +40,4 @@ next-env.d.ts
 
 # Dirs within public/Photos
 public/Photos/Photos*
+.vercel
