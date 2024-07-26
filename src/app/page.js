@@ -13,7 +13,7 @@ blogs.sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date));
 export default function Home() {
   return (
     <main className="grid gap-32">
-      <div>
+      <div className="pt-10">
         <Hero />
       </div>
       <div id="about">
