@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* TODO: consider coming up with a standardized design system rather than using arbitrary numbers */
+
 @layer base {
   body {
     @apply background-gradient;
