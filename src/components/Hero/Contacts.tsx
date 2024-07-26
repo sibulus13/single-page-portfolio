@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
-
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { TfiEmail } from "react-icons/tfi";
+
 const contacts = [
   {
     icon: <FaLinkedin />,
@@ -10,6 +11,10 @@ const contacts = [
   {
     icon: <FaGithub />,
     link: "https://github.com/sibulus13",
+  },
+  {
+    icon: <TfiEmail />,
+    link: "mailto:chengjie.michael.huang@gmail.com",
   },
   {
     icon: <FaInstagram />,
