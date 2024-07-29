@@ -18,11 +18,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <Head>
         <link rel="icon" href="/icon.ico" sizes="any" />
       </Head>
-      <body id='home' className={'p-4 px-10 lg:px-40 grid mx-auto scroll-p-44' + inter.className} >
+      <body id='home' className={'p-4 px-10 lg:px-40 grid mx-auto scroll-smooth ' + inter.className} >
         <Providers>
           <Header />
           {children}

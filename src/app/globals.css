@@ -9,11 +9,6 @@
     @apply background-gradient;
     @apply dark:text-white text-black;
   }
-
-  html {
-    @apply scroll-smooth;
-  }
-
   h1 {
     @apply text-2xl font-bold py-2;
   }
