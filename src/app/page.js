@@ -4,6 +4,8 @@ import Experience from "@/components/Experience/Experience";
 import Projects from "@/components/Projects/Projects";
 import Photo from "@/components/Photo/Photo";
 import { getBlogPosts } from "@/Contentful/Contentful";
+import CommentGallery from "@/components/Comment/CommentGallery";
+import CommentForm from "@/components/Comment/CommentForm";
 
 let projects = await getBlogPosts('projects');
 let blogs = await getBlogPosts('adventure');
@@ -35,6 +37,11 @@ export default function Home() {
       <div id="blog">
         <h1 className="pt-10 lg:pt-20">BLOG</h1>
         <Projects content={blogs} type={'Blog'} />
+      </div>
+      <div id="comments">
+        <h1 className="pt-10 lg:pt-20">COMMENTS</h1>
+        <CommentForm />
+        <CommentGallery />
       </div>
     </main>
   );

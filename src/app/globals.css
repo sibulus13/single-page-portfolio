@@ -58,4 +58,12 @@
   .experience:hover {
     @apply transition-transform duration-300 ease-in-out bg-gray-300 dark:bg-gray-900;
   }
+
+  .comment-container {
+    @apply border-2 p-4 grid gap-2 border-black rounded-xl dark:border-white;
+  }
+
+  .comment-input {
+    @apply p-2 rounded-xl;
+  }
 }
