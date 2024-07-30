@@ -7,7 +7,7 @@ import { FaHome, FaAngleLeft } from "react-icons/fa";
 import ThemeSwitch from "./ThemeSwitcher";
 
 const items = [
-  { name: "Home", href: "/" },
+  { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
@@ -20,6 +20,7 @@ const Header: React.FC = () => {
   const router = useRouter();
   const pathname = usePathname();
   const isHomePg = pathname === "/";
+  // TODO nav bar text not accessible when hovering over certain elements, consider adding an outline of some sort
   return (
     <div className="sticky top-0 -mx-6 z-10 flex flex-col">
       <nav className="p-2 px-6 rounded-full backdrop-filter backdrop-blur-3xl text-xs md:text-lg">
