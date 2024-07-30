@@ -3,6 +3,7 @@ import About from "@/components/About/About";
 import Experience from "@/components/Experience/Experience";
 import Projects from "@/components/Projects/Projects";
 import Photo from "@/components/Photo/Photo";
+import Comment from "@/components/Comment/Comment";
 import { getBlogPosts } from "@/Contentful/Contentful";
 
 let projects = await getBlogPosts('projects');
@@ -35,6 +36,10 @@ export default function Home() {
       <div id="blog">
         <h1 className="pt-10 lg:pt-20">BLOG</h1>
         <Projects content={blogs} type={'Blog'} />
+      </div>
+      <div id="comments">
+        <h1 className="pt-40 lg:pt-80"></h1>
+        <Comment />
       </div>
     </main>
   );
