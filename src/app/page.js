@@ -3,9 +3,8 @@ import About from "@/components/About/About";
 import Experience from "@/components/Experience/Experience";
 import Projects from "@/components/Projects/Projects";
 import Photo from "@/components/Photo/Photo";
+import Comment from "@/components/Comment/Comment";
 import { getBlogPosts } from "@/Contentful/Contentful";
-import CommentGallery from "@/components/Comment/CommentGallery";
-import CommentForm from "@/components/Comment/CommentForm";
 
 let projects = await getBlogPosts('projects');
 let blogs = await getBlogPosts('adventure');
@@ -39,9 +38,8 @@ export default function Home() {
         <Projects content={blogs} type={'Blog'} />
       </div>
       <div id="comments">
-        <h1 className="pt-10 lg:pt-20">COMMENTS</h1>
-        <CommentForm />
-        <CommentGallery />
+        <h1 className="pt-40 lg:pt-80"></h1>
+        <Comment />
       </div>
     </main>
   );

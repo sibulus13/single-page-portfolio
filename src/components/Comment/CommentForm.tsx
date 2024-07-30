@@ -1,6 +1,7 @@
 "use client";
+
 import React, { useState } from "react";
-import prisma from "@/Prisma/prisma";
+import { addComment } from "@/Prisma/api";
 import { RiStarFill } from "react-icons/ri";
 
 const CommentForm: React.FC = () => {
@@ -12,28 +13,20 @@ const CommentForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!rating && !comment) {
-      alert("Please provide a rating, or a comment");
-      return;
-    }
     try {
-      // Create a user
-      const user = await prisma.user.create({
-        data: {
-          name,
-          email,
-          role: title,
-        },
-      });
+      let author_data = {
+        name,
+        email,
+        role: title,
+      };
 
-      // Create a comment using the created user
-      await prisma.comment.create({
-        data: {
-          rating,
-          text: comment,
-          authorId: user.id,
-        },
-      });
+      let comment_data = {
+        rating,
+        text: comment,
+        author_data,
+      };
+
+      await addComment(comment_data, author_data);
 
       // Reset form fields after successful submission
       setName("");
@@ -49,35 +42,29 @@ const CommentForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="comment-container">
-      <div className="col-span-1">
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="comment-input"
-        />
-      </div>
-      <div className="col-span-1">
-        <input
-          type="text"
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          className="comment-input"
-        />
-      </div>
-      <div>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="comment-input"
-        />
-      </div>
-      <div className="flex text-3xl items-center justify-center">
+    <form onSubmit={handleSubmit} className="comment-container md:grid-cols-3">
+      <input
+        type="text"
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        className="comment-input"
+      />
+      <input
+        type="text"
+        placeholder="Title"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        className="comment-input"
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className="comment-input"
+      />
+      <div className="flex text-3xl items-center justify-center md:col-start-2">
         {[1, 2, 3, 4, 5].map((value) => (
           <RiStarFill
             key={value}
@@ -90,10 +77,13 @@ const CommentForm: React.FC = () => {
         placeholder="Leave a comment!"
         value={comment}
         onChange={(e) => setComment(e.target.value)}
-        className="comment-input"
+        className="comment-input md:col-span-3"
       />
       <br />
-      <button className="clickable border-2 rounded-3xl" type="submit">
+      <button
+        className="clickable border-2 border-black dark:border-white rounded-3xl"
+        type="submit"
+      >
         Submit
       </button>
     </form>
