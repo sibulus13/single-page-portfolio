@@ -17,7 +17,7 @@ type Comment = {
 
 // create a user and a comment
 export async function addComment(comment: Comment, author: Author) {
-    if (!comment.rating || !comment.text) {
+    if (!comment.rating && !comment.text) {
         throw new Error("At least leave a comment, or a rating.");
     }
     if (author.name === "") {
