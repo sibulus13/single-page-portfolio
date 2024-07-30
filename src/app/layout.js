@@ -2,7 +2,6 @@ import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import dynamic from "next/dynamic";
-import Head from "next/head";
 import { Providers } from "./provider";
 
 import "./globals.css";
@@ -18,11 +17,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <Head>
-        <link rel="icon" href="/icon.ico" sizes="any" />
-      </Head>
-      <body id='home' className={'p-4 px-10 lg:px-40 grid mx-auto scroll-smooth ' + inter.className} >
+    <html lang="en" className="scroll-smooth">
+      <body id='home' className={'p-4 px-10 lg:px-40 grid mx-auto  ' + inter.className} >
         <Providers>
           <Header />
           {children}
@@ -40,4 +36,6 @@ export const metadata = {
   title: "Michael Huang's Portfolio",
   description: "Planned with Notion, designed with Figma, \
   built using Next.js, styled using Tailwind CSS, and created with the help of a moderate dose of ChatGPT.",
+  rel: "icon",
+  href: "/icon.ico",
 };
