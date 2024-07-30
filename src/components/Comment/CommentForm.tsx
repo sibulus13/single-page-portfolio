@@ -14,6 +14,11 @@ const CommentForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      if (!comment && !rating) {
+        alert("Please leave a comment or provide a rating.");
+        return;
+      }
+
       let author_data = {
         name,
         email,
@@ -34,9 +39,9 @@ const CommentForm: React.FC = () => {
       setTitle("");
       setRating(null);
       setComment("");
-
-      console.log("Comment added successfully!");
+      alert("Comment added successfully!");
     } catch (error) {
+      alert("Error adding comment. Please try again later.");
       console.error("Error adding comment:", error);
     }
   };
