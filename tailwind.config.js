@@ -13,5 +13,14 @@ module.exports = {
       },
     },
   },
+  safelist: [
+    'py-1',
+    "pt-2",
+    "pt-4",
+    "py-2",
+    "py-4",
+    'underline',
+    'px-40'
+  ],
   plugins: [],
 };
