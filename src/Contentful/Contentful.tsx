@@ -63,9 +63,9 @@ export const options = {
     [BLOCKS.HR]: (node: any, children: any) => <hr className="py-4" />,
     [BLOCKS.EMBEDDED_ASSET]: (node: any) => (
       <div className="py-4 grid">
-        <div className="relative aspect-square">
+        <div className="relative aspect-square ">
           <Image
-            className="rounded-3xl"
+            className="object-cover rounded-3xl"
             src={"https:" + node.data.target.fields.file.url}
             alt={node.data.target.fields.file.title}
             fill

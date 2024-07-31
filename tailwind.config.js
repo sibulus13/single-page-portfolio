@@ -20,7 +20,10 @@ module.exports = {
     "py-2",
     "py-4",
     'underline',
-    'px-40'
+    'px-40',
+    'aspect-square',
+    'rounded-3xl',
+    'object-cover',
   ],
   plugins: [],
 };
