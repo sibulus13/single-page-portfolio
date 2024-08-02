@@ -37,10 +37,6 @@ export default function Home() {
         <h1 className="pt-10 lg:pt-20">BLOG</h1>
         <Projects content={blogs} type={'Blog'} />
       </div>
-      <div id="comments">
-        <h1 className="pt-40 lg:pt-80"></h1>
-        <Comment />
-      </div>
     </main>
   );
 }
