@@ -71,8 +71,7 @@ export const options = {
             fill
           ></Image>
         </div>
-        <br />
-        <p className=" py-1 flex justify-center">
+        <p className="description flex justify-center">
           {node.data.target.fields.title}
         </p>
         <br />
