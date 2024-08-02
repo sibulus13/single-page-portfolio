@@ -15,7 +15,7 @@ export default async function ContentfulContent({ id }: { id: string }) {
 
   return (
     <div className="py-10">
-      <div className="px-10 md:px-40 lg:px-80 mx-auto">
+      <div className="px-10 md:px-40 lg:px-60 mx-auto">
         <p className="date">{new Date(date).toLocaleDateString()}</p>
         <div className="flex justify-between">
           <h1>{title}</h1>
