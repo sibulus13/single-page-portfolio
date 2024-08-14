@@ -2,57 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 20, 5, 20;
-  --background-end-rgb: 0, 0, 0;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: radial-gradient(
-      ellipse at center,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .date {
-    @apply text-sm text-gray-400;
-  }
-
-  .description {
-    @apply date py-1;
-  }
-
-  .clickable {
-    @apply cursor-pointer font-medium text-white hover:text-fuchsia-950;
-  }
-
-  .pill {
-    @apply text-xs rounded-3xl px-2 py-1 mr-1 mb-1 inline-block text-gray-400 bg-fuchsia-950 font-medium;
-  }
-
-  .experience {
-    @apply rounded-3xl p-4;
-  }
-
-  .experience:hover {
-    @apply transition-transform duration-300 ease-in-out bg-gray-900;
-  }
-}
+/* TODO: consider coming up with a standardized design system rather than using arbitrary numbers */
 
 @layer base {
   body {
-    @apply scroll-smooth;
+    @apply background-gradient;
+    @apply dark:text-white text-black;
   }
-
   h1 {
     @apply text-2xl font-bold py-2;
   }
@@ -63,5 +19,46 @@ body {
 
   p {
     @apply text-base;
+  }
+}
+
+@layer utilities {
+  .background-gradient {
+    @apply bg-gradient-to-b from-gray-300 via-zinc-400 to-gray-300 dark:from-black dark:via-dark-purple dark:to-black;
+  }
+  .accent {
+    @apply text-gray-950 dark:text-gray-300;
+  }
+
+  .date {
+    @apply text-sm accent;
+  }
+
+  .description {
+    @apply date py-1;
+  }
+
+  .clickable {
+    @apply cursor-pointer font-medium text-black dark:text-white hover:text-sky-500 dark:hover:text-fuchsia-900;
+  }
+
+  .pill {
+    @apply text-xs rounded-3xl text-center px-2 py-1 mr-1 mb-1 inline-block accent bg-sky-400 dark:bg-fuchsia-950 font-medium;
+  }
+
+  .experience {
+    @apply rounded-3xl p-4;
+  }
+
+  .experience:hover {
+    @apply transition-transform duration-300 ease-in-out bg-gray-300 dark:bg-gray-900;
+  }
+
+  .comment-container {
+    @apply border-2 p-4 grid gap-4 border-black rounded-xl dark:border-white;
+  }
+
+  .comment-input {
+    @apply p-2 rounded-xl;
   }
 }

@@ -31,7 +31,7 @@ export const options = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node: any, children: any) => (
       <div>
-        <p className="pt-1">{children}</p>
+        <p className="py-2">{children}</p>
       </div>
     ),
     [BLOCKS.HEADING_1]: (node: any, children: any) => (
@@ -39,53 +39,47 @@ export const options = {
     ),
     [BLOCKS.HEADING_2]: (node: any, children: any) => (
       <div>
-        <h2 className="text-2xl pt-4">{children}</h2>
+        <h2 className="pt-4">{children}</h2>
       </div>
     ),
     [BLOCKS.HEADING_3]: (node: any, children: any) => (
-      <h3 className="text-xl pt-4">{children}</h3>
+      <h3 className="pt-4">{children}</h3>
     ),
     [BLOCKS.HEADING_4]: (node: any, children: any) => (
-      <h4 className="text-lg">{children}</h4>
+      <h4 className="pt-4">{children}</h4>
     ),
     [BLOCKS.HEADING_5]: (node: any, children: any) => (
-      <h5 className="text-base">{children}</h5>
+      <h5 className="pt-4">{children}</h5>
     ),
     [BLOCKS.HEADING_6]: (node: any, children: any) => (
-      <h6 className="text-sm">{children}</h6>
+      <h6 className="pt-4">{children}</h6>
     ),
     [BLOCKS.QUOTE]: (node: any, children: any) => (
-      <blockquote className="text-sm">{children}</blockquote>
+      <blockquote>{children}</blockquote>
     ),
-    [BLOCKS.UL_LIST]: (node: any, children: any) => (
-      <ul className="list-disc">{children}</ul>
-    ),
-    [BLOCKS.OL_LIST]: (node: any, children: any) => (
-      <ol className="list-decimal">{children}</ol>
-    ),
-    [BLOCKS.LIST_ITEM]: (node: any, children: any) => (
-      <li className="text-gray-500">{children}</li>
-    ),
-    [BLOCKS.HR]: (node: any, children: any) => <hr className="pt-4" />,
+    [BLOCKS.UL_LIST]: (node: any, children: any) => <ul>{children}</ul>,
+    [BLOCKS.OL_LIST]: (node: any, children: any) => <ol>{children}</ol>,
+    [BLOCKS.LIST_ITEM]: (node: any, children: any) => <li>{children}</li>,
+    [BLOCKS.HR]: (node: any, children: any) => <hr className="py-4" />,
     [BLOCKS.EMBEDDED_ASSET]: (node: any) => (
-      <div>
-        <br />
-        <div className="mx-auto w-2/3">
+      <div className="py-4 grid">
+        <div className="relative aspect-square ">
           <Image
-            className="rounded-lg object-contain"
+            className="object-cover rounded-3xl"
             src={"https:" + node.data.target.fields.file.url}
             alt={node.data.target.fields.file.title}
-            width={node.data.target.fields.file.details.image.width}
-            height={node.data.target.fields.file.details.image.height}
+            fill
           ></Image>
         </div>
-        <p className="flex justify-center">{node.data.target.fields.title}</p>
+        <p className="description flex justify-center">
+          {node.data.target.fields.title}
+        </p>
         <br />
       </div>
     ),
     [INLINES.HYPERLINK]: (node: any, children: any) => (
       <Link href={node.data.uri}>
-        <span className="underline">{children}</span>
+        <span className="clickable underline">{children}</span>
       </Link>
     ),
   },

@@ -5,17 +5,11 @@ import { FaArrowUp } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer>
-      <div className="py-6 flex justify-evenly items-center">
-        <Link href="" className="text-2xl clickable">
+      <div className="py-6 mt-10 flex justify-evenly items-center border-t-2 border-black dark:border-white">
+        <Link href="#home" className="text-2xl clickable">
           <FaArrowUp />
         </Link>
         <p className="description">Made in Canada</p>
-        {/* TODO Implement get in touch animation & logic */}
-        {/* <div>
-          <Link href="">
-            <p className="description">Get in touch</p>
-          </Link>
-        </div> */}
       </div>
     </footer>
   );

@@ -1,29 +1,41 @@
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import dynamic from "next/dynamic";
+import { Providers } from "./provider";
+
 import "./globals.css";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const OpenReplayNoSSR = dynamic(() => import('@/components/openReplay'), {
+  ssr: false,
+})
 
-export const metadata = {
-  title: "Michael Huang's Portfolio",
-  description: "Planned with Notion, designed with Figma, \
-  built using Next.js, Tailwind CSS, and a moderate dose of GenAI.",
-};
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={'w-10/12 sm:w-4/5 lg:w-3/5 flex flex-col mx-auto ' + inter.className} >
-        <Header />
-        {children}
-        <Analytics />
-        <SpeedInsights />
-        <Footer />
+      <body id='home' className={'p-4 px-10 lg:px-40 grid mx-auto  ' + inter.className} >
+        <Providers>
+          <Header />
+          {children}
+          <OpenReplayNoSSR />
+          <Analytics />
+          <SpeedInsights />
+          <Footer />
+        </Providers>
       </body>
     </html >
   );
 }
+
+export const metadata = {
+  title: "Michael Huang's Portfolio",
+  description: "Planned with Notion, designed with Figma, \
+  built using Next.js, styled using Tailwind CSS, and created with the help of a moderate dose of ChatGPT.",
+  rel: "icon",
+  href: "/icon.ico",
+};

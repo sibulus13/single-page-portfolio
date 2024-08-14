@@ -1,8 +1,6 @@
-"use client";
 import React from "react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-import { useRouter } from "next/navigation";
 
 export default function PostEntry(props: any) {
   const { content, parentPath } = props;
@@ -12,36 +10,30 @@ export default function PostEntry(props: any) {
   const tags = content.fields.tags ?? [];
   const githubLink = content.fields.githubLink ?? null;
 
-  const router = useRouter();
-  const toGithub = () => {
-    // Without this, a nested link would cause hydration failure
-    router.push(githubLink);
-  };
-
   return (
-    <Link
-      href={{
-        pathname: `/${parentPath}/` + title,
-        query: {
-          id: id,
-        },
-      }}
-      className="bg-cover bg-center aspect-square rounded-3xl flex justify-center items-center hover:scale-95 transition-transform duration-300"
-      style={{ backgroundImage: `url("https:${url}")` }}
-    >
-      <div className="bg-black bg-opacity-70 p-2 rounded-xl w-4/5">
+    <div className="relative group">
+      <Link
+        href={{
+          pathname: `/${parentPath}/` + title,
+          query: {
+            id: id,
+          },
+        }}
+        className="bg-cover bg-center aspect-square rounded-3xl flex justify-center items-center transition duration-300 group-hover:scale-95 group-hover:opacity-60"
+        style={{ backgroundImage: `url("https:${url}")` }}
+      ></Link>
+      <div className="bg-white dark:bg-black bg-opacity-70 dark:bg-opacity-70 p-2 rounded-xl w-4/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
         <div className="flex items-center">
           <h2 className="mr-2">{title}</h2>
           {githubLink && (
-            <button
-              onClick={(e) => {
-                toGithub();
-                e.stopPropagation();
-              }}
-              className="clickable"
+            <Link
+              href={githubLink}
+              className="clickable pointer-events-auto"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FaGithub className="text-2xl" />
-            </button>
+            </Link>
           )}
         </div>
         <p className="description">{description}</p>
@@ -53,6 +45,6 @@ export default function PostEntry(props: any) {
           ))}
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

@@ -7,7 +7,11 @@ const type = "projects";
 const parentPath = "Projects";
 const Page: React.FC = async () => {
   let posts = await getBlogPosts(type);
-  posts.sort((a, b) => new Date(b.fields.date as string).getTime() - new Date(a.fields.date as string).getTime());
+  posts.sort(
+    (a, b) =>
+      new Date(b.fields.date as string).getTime() -
+      new Date(a.fields.date as string).getTime()
+  );
 
   return (
     <div className="pt-10">

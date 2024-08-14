@@ -1,40 +1,40 @@
-import Header from "@/components/Header";
 import Hero from "@/components/Hero/Hero";
 import About from "@/components/About/About";
 import Experience from "@/components/Experience/Experience";
 import Projects from "@/components/Projects/Projects";
 import Photo from "@/components/Photo/Photo";
+import Comment from "@/components/Comment/Comment";
 import { getBlogPosts } from "@/Contentful/Contentful";
 
 let projects = await getBlogPosts('projects');
 let blogs = await getBlogPosts('adventure');
 projects.sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date));
 blogs.sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date));
-// TODO remove min-h-400 when ALL contents are added
-export default async function Home() {
+
+export default function Home() {
   return (
-    <main id='#'>
-      <div className="py-10">
+    <main className="grid gap-32">
+      <div>
         <Hero />
       </div>
-      <div id="about" className="py-10">
-        <h1>ABOUT</h1>
+      <div id="about">
+        <h1 className="pt-10 lg:pt-20">ABOUT</h1>
         <About />
       </div>
-      <div id="experience" className="py-10">
-        <h1>EXPERIENCE</h1>
+      <div id="experience">
+        <h1 className="pt-10 lg:pt-20">EXPERIENCE</h1>
         <Experience />
       </div>
-      <div id="projects" className="py-10">
-        <h1>PROJECTS</h1>
+      <div id="projects">
+        <h1 className="pt-10 lg:pt-20">PROJECTS</h1>
         <Projects content={projects} type={'Projects'} />
       </div>
-      <div id="photography" className="py-10">
-        <h1>PHOTOGRAPHY</h1>
+      <div id="photography">
+        <h1 className="pt-10 lg:pt-20">GALLERY</h1>
         <Photo />
       </div>
-      <div id="blog" className="py-10">
-        <h1>BLOG</h1>
+      <div id="blog">
+        <h1 className="pt-10 lg:pt-20">BLOG</h1>
         <Projects content={blogs} type={'Blog'} />
       </div>
     </main>

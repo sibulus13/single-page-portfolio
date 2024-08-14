@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const About: React.FC = () => {
   return (
-    <div className="text-gray-400">
+    <div className="accent">
       <p>
         Back in 2016, I wrote my first program to breath life into an autonomous
         robot for my degree. Seeing the impact of those lines of code sparked my
@@ -14,8 +14,9 @@ const About: React.FC = () => {
       </p>
       <br />
       <p>
-        Today, I have the privilege of amassing a diverse software development
-        journey, having completed software project life cycles for my{" "}
+        Today, I am a Software Engineer with a focus on full-stack development,
+        having the privilege of amassing a diverse software development journey,
+        and completing software project life cycles for my{" "}
         <Link href={"https://www.sfu.ca/"}>
           <span className="clickable">school</span>
         </Link>
@@ -50,8 +51,8 @@ const About: React.FC = () => {
         <Link href={"#photography"}>
           <span className="clickable">photography</span>
         </Link>
-        , exploring the mountains, riding through the twisties, or mastering the
-        ukulele.
+        , exploring the mountains, riding through the twisties, or being
+        whimsical with the ukulele.
       </p>
     </div>
   );
