@@ -1,3 +1,4 @@
 User-agent: *
 Disallow: /Blog/* 
 Disallow: /Projects/*
+Disallow: /Michael*
