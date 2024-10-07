@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
     <section className="hero">
       <div className="hero-content">
         <div className="grid md:grid-cols-2 items-center justify-center md:text-left text-center gap-2">
-          <div className="flex justify-center md:order-2 md:pb-16 lg:px-10">
+          <div className="flex justify-center md:order-2 md:p-10 xl:p-40">
             <Image src={CartoonFaceshootMask} alt="Low poly hero picture" />
           </div>
           <div className="md:order-1">
