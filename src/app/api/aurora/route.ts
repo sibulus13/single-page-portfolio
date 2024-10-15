@@ -1,5 +1,4 @@
 import { filterDataStart, populatePredictionData } from "./data";
-import axios from 'axios';
 
 let cache = {
     data: null,
@@ -17,10 +16,13 @@ export async function GET() {
     }
 
     try {
-        const response = await axios.get('https://services.swpc.noaa.gov/text/3-day-forecast.txt');
+        const response = await fetch('https://services.swpc.noaa.gov/text/3-day-forecast.txt');
+        if (!response.ok) {
+            throw new Error('Failed to fetch forecast data');
+        }
 
         // Process the response to convert it to JSON
-        const forecastText = response.data;
+        const forecastText = await response.text();;
 
         // Split the text into lines and filter out empty lines
         const forecastLines = forecastText.split('\n').filter(line => line.trim() !== '');
