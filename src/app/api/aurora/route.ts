@@ -1,22 +1,8 @@
 import { filterDataStart, populatePredictionData } from "./data";
 
-let cache = {
-    data: null,
-    timestamp: null
-};
-
 export async function GET() {
-    // check if the cache is valid
-    const now = Date.now();
-    let cacheFromYesterday = !cache.timestamp || new Date(cache.timestamp).getDate() !== new Date(now).getDate()
-    let nowPast1UTC = new Date(now).getUTCHours() >= 1;
-    let cacheValid = !(cacheFromYesterday && nowPast1UTC) && cache.data;
-    if (cacheValid) {
-        return Response.json(cache.data);
-    }
-
     try {
-        const response = await fetch('https://services.swpc.noaa.gov/text/3-day-forecast.txt');
+        const response = await fetch('https://services.swpc.noaa.gov/text/3-day-forecast.txt', { next: { tags: ['aurora'] } });
         if (!response.ok) {
             throw new Error('Failed to fetch forecast data');
         }
@@ -34,10 +20,6 @@ export async function GET() {
         let predictions = filterDataStart(forecastData);
         const dates = predictions[0].line
         let predictionData = populatePredictionData(predictions, dates);
-
-        // Update the cache
-        cache.data = predictionData;
-        cache.timestamp = now;
         return Response.json(predictionData);
     } catch (error) {
         console.error('Error fetching forecast:', error);
