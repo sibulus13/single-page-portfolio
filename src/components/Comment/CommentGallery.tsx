@@ -1,4 +1,4 @@
-import prisma from "@/Prisma/prisma";
+import prisma from "@/lib/Prisma/prisma";
 import { RiStarFill } from "react-icons/ri";
 
 const CommentGallery = async () => {

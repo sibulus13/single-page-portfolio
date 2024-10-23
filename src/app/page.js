@@ -4,7 +4,7 @@ import Experience from "@/components/Experience/Experience";
 import Projects from "@/components/Projects/Projects";
 import Photo from "@/components/Photo/Photo";
 import Comment from "@/components/Comment/Comment";
-import { getBlogPosts } from "@/Contentful/Contentful";
+import { getBlogPosts } from "@/lib/Contentful/Contentful";
 
 let projects = await getBlogPosts('projects');
 let blogs = await getBlogPosts('adventure');

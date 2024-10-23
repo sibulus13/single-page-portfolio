@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { addComment } from "@/Prisma/api";
+import { addComment } from "@/lib/Prisma/api";
 import { RiStarFill } from "react-icons/ri";
 
 const CommentForm: React.FC = () => {

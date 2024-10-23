@@ -1,7 +1,7 @@
 import React from "react";
 
 import PostEntry from "@/components/Posts/PostEntry";
-import { getBlogPosts } from "@/Contentful/Contentful";
+import { getBlogPosts } from "@/lib/Contentful/Contentful";
 
 const type = "projects";
 const parentPath = "Projects";

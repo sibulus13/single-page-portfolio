@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import { tracker } from "@/OpenReplay/OpenReplay";
+import { tracker } from "@/lib/OpenReplay/OpenReplay";
 
 const Openreplay = () => {
   useEffect(() => {

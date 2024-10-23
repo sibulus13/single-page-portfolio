@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata, ResolvingMetadata } from "next";
 import ContentfulContent from "@/components/Contentful/Content";
-import { getPostContent } from "@/Contentful/Contentful";
+import { getPostContent } from "@/lib/Contentful/Contentful";
 
 interface Props {
   params: { id: string };

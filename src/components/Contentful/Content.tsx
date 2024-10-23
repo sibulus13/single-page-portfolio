@@ -1,7 +1,7 @@
 import React from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { options } from "@/Contentful/Contentful";
-import { getPostContent } from "@/Contentful/Contentful";
+import { options } from "@/lib/Contentful/Contentful";
+import { getPostContent } from "@/lib/Contentful/Contentful";
 import { Document } from "@contentful/rich-text-types";
 
 export default async function ContentfulContent({ id }: { id: string }) {
