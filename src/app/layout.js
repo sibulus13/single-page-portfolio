@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
 }
 
 export const metadata = {
-  title: "Michael Huang's Portfolio",
+  title: "Michael Huang",
   description: "Planned with Notion, designed with Figma, \
   built using Next.js, styled using Tailwind CSS, and created with the help of a moderate dose of ChatGPT.",
   rel: "icon",
