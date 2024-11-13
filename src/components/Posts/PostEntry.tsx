@@ -4,17 +4,25 @@ import { FaGithub } from "react-icons/fa";
 
 export default function PostEntry(props: any) {
   const { content, parentPath } = props;
-  const { title, description, thumbnail, date } = content.fields;
+  const { title, description, thumbnail, redirect } = content.fields;
   const { id } = content.sys;
   const { url, title: alt } = thumbnail.fields.file;
   const tags = content.fields.tags ?? [];
   const githubLink = content.fields.githubLink ?? null;
 
+  function redirectLink(): string {
+    if (redirect) {
+      return redirect;
+    } else {
+      return `/${parentPath}/` + title;
+    }
+  }
+
   return (
     <div className="relative group">
       <Link
         href={{
-          pathname: `/${parentPath}/` + title,
+          pathname: redirectLink(),
           query: {
             id: id,
           },
