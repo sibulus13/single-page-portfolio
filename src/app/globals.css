@@ -1,64 +1,249 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* TODO: consider coming up with a standardized design system rather than using arbitrary numbers */
+/* ── Design Tokens ───────────────────────────────────────── */
+:root {
+  /* Fonts */
+  --font-display: var(--font-display, 'Fraunces', Georgia, serif);
+  --font-body: 'Satoshi', system-ui, sans-serif;
+  --font-mono: var(--font-mono, 'JetBrains Mono', 'Courier New', monospace);
 
+  /* Plum accent scale (H305°) */
+  --color-accent-50:   #FBF0FB;
+  --color-accent-100:  #F4D8F4;
+  --color-accent-200:  #E5AFDF;
+  --color-accent-300:  #D180CA;
+  --color-accent-400:  #C084C8;
+  --color-accent-500:  #A865A0;
+  --color-accent-600:  #8E4585;
+  --color-accent-700:  #7A3573;
+  --color-accent-800:  #641F5E;
+  --color-accent-900:  #4E1A4A;
+  --color-accent-950:  #371433;
+
+  /* Spacing (8pt grid) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+
+  /* Light mode surfaces */
+  --color-bg:        #ffffff;
+  --color-surface:   #fafafa;
+  --color-surface-2: #f4f4f5;
+  --color-border:    #e4e4e7;
+  --color-border-2:  #d4d4d8;
+  --color-text-1:    #09090b;
+  --color-text-2:    #52525b;
+  --color-text-3:    #71717a;
+
+  /* Light mode accent */
+  --color-accent:     #8E4585;
+  --color-accent-dim: #7A3573;
+  --color-accent-deep: #371433;
+  --color-accent-sub:        rgba(142, 69, 133, 0.06);
+  --color-accent-sub-strong: rgba(142, 69, 133, 0.22);
+  --color-accent-400:        #C084C8;
+}
+
+.dark {
+  --color-bg:        #09090b;
+  --color-surface:   #111113;
+  --color-surface-2: #18181b;
+  --color-border:    #27272a;
+  --color-border-2:  #3f3f46;
+  --color-text-1:    #fafafa;
+  --color-text-2:    #a1a1aa;
+  --color-text-3:    #71717a;
+
+  --color-accent:     #C084C8;
+  --color-accent-dim: #A865A0;
+  --color-accent-deep: #4E1A4A;
+  --color-accent-sub:        rgba(192, 132, 200, 0.08);
+  --color-accent-sub-strong: rgba(192, 132, 200, 0.18);
+  --color-accent-400:        #DDB8E4;
+}
+
+/* ── Base Styles ─────────────────────────────────────────── */
 @layer base {
   body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text-1);
     @apply background-gradient;
-    @apply dark:text-white text-black;
-  }
-  h1 {
-    @apply text-2xl font-bold py-2;
   }
 
-  h2 {
-    @apply text-lg font-bold;
+  /* Subtle grain overlay — quiet machine texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.022;
+    pointer-events: none;
+    z-index: 9999;
   }
 
-  p {
-    @apply text-base;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--color-text-1);
+  }
+
+  h1 { @apply text-2xl font-bold py-2; }
+  h2 { @apply text-lg font-bold; }
+  p  { @apply text-base; }
+
+  code, pre, kbd, samp {
+    font-family: var(--font-mono);
+  }
+
+  section[id] {
+    scroll-margin-top: 4rem;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
   }
 }
 
+/* ── Utilities ───────────────────────────────────────────── */
 @layer utilities {
   .background-gradient {
-    @apply bg-gradient-to-b from-gray-300 via-zinc-400 to-gray-300 dark:from-black dark:via-dark-purple dark:to-black;
+    @apply bg-white dark:bg-zinc-950;
   }
+
+  .font-display { font-family: var(--font-display); }
+  .font-body    { font-family: var(--font-body); }
+  .font-mono    { font-family: var(--font-mono); }
+
   .accent {
-    @apply text-gray-950 dark:text-gray-300;
+    color: var(--color-text-2);
   }
 
   .date {
-    @apply text-sm accent;
+    @apply text-sm font-mono;
+    color: var(--color-text-3);
+    font-family: var(--font-mono);
   }
 
   .description {
     @apply date py-1;
+    color: var(--color-text-2);
+    font-family: var(--font-body);
   }
 
   .clickable {
-    @apply cursor-pointer font-medium text-black dark:text-white hover:text-sky-500 dark:hover:text-fuchsia-900;
+    @apply cursor-pointer font-medium transition-colors;
+    color: var(--color-text-1);
+  }
+
+  .clickable:hover {
+    color: var(--color-accent);
   }
 
   .pill {
-    @apply text-xs rounded-3xl text-center px-2 py-1 mr-1 mb-1 inline-block accent bg-sky-400 dark:bg-fuchsia-950 font-medium;
+    @apply text-xs rounded-full text-center px-3 py-1 mr-1 mb-1 inline-block font-medium;
+    color: var(--color-accent);
+    background-color: var(--color-accent-sub);
+    border: 1px solid var(--color-accent);
+    font-family: var(--font-mono);
   }
 
   .experience {
-    @apply rounded-3xl p-4;
+    @apply rounded-2xl p-4;
+    border-left: 2px solid var(--color-accent-deep);
+    transition: background-color var(--duration-base) var(--ease-out);
   }
 
   .experience:hover {
-    @apply transition-transform duration-300 ease-in-out bg-gray-300 dark:bg-gray-900;
+    background-color: var(--color-surface);
+    border-left-color: var(--color-accent);
   }
 
   .comment-container {
-    @apply border-2 p-4 grid gap-4 border-black rounded-xl dark:border-white;
+    @apply border-2 p-4 grid gap-4 rounded-xl;
+    border-color: var(--color-border);
   }
 
   .comment-input {
     @apply p-2 rounded-xl;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
   }
+
+  .text-accent { color: var(--color-accent); }
+  .border-accent { border-color: var(--color-accent); }
+  .bg-accent-sub { background-color: var(--color-accent-sub); }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-400) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .icon-auto-invert {
+    transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .dark .icon-auto-invert {
+    filter: brightness(0) invert(1);
+  }
+}
+
+/* ── Components ──────────────────────────────────────────── */
+@layer components {
+  .hero-grid-bg {
+    background-image: radial-gradient(circle, var(--color-accent-sub-strong) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+}
+
+/* ── Animations ──────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gridDrift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 28px 28px; }
+}
+
+.animate-fade-in { animation: fadeUp 0.5s ease-out both; }
+.animate-fade-up { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-grid    { animation: gridDrift 24s linear infinite; }
+
+.no-transitions * { transition: none !important; }
+html.no-transitions { transition: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .animate-grid { animation: none !important; }
 }

@@ -1,0 +1,25 @@
+# Michael Huang — michaelhuang.ca
+
+Michael Huang is an AI-native full-stack engineer and consultant based in Vancouver, BC, Canada.
+
+## What this site covers
+- Professional background and work history (2016–present)
+- Engineering projects: Tarive (cross-platform mobile app), Prompt Studio, SI8 purchasing automation
+- Technical writing and case studies
+- Contact information and consulting availability
+
+## Key facts
+- Current roles: Senior Software Engineer at Traction Complete (Aug 2025–present); Founder & Principal Engineer at SI8 Technology (Jan 2025–present)
+- Previous: Full Stack Engineer at GrainFox (Oct 2022–Jan 2024), Robotic Developer at MapaRobo (Oct 2021–Mar 2022), Control Engineer Co-op at Ballard Power Systems (Jan–Aug 2020)
+- Education: Simon Fraser University, Computer Science
+- Core skills: TypeScript, Next.js, React Native, Python, AWS Lambda/CDK, Anthropic Claude API, agentic workflow design, Playwright/Selenium
+- Achievements: 5× engineering velocity via agentic workflows, 30% AWS infrastructure cost reduction, 80% reduction in manual data entry at GrainFox
+- Open to: consulting engagements, senior full-stack engineering roles, AI integration projects
+
+## Contact
+Email: chengjie.michael.huang@gmail.com
+LinkedIn: https://linkedin.com/in/michaelchuang
+GitHub: https://github.com/michael-c-huang
+
+## Related site
+SI8 Technology (Michael's consulting company): https://www.si8tech.com

@@ -4,6 +4,44 @@ import { AiOutlineLink } from "react-icons/ai";
 
 const experiences = [
   {
+    title: "Product Developer",
+    company: "Traction Complete",
+    companyLink: "https://www.tractioncomplete.com/",
+    date: "Aug 2025 - Present",
+    description:
+      "Accelerated engineering velocity 5× by introducing agentic AI workflows into the development cycle. \
+      Reduced AWS infrastructure costs by 30% through Lambda and CDK optimization. \
+      Architected and maintained backend systems with TypeScript, Bitbucket CI/CD, and Datadog observability.",
+    tags: [
+      "TypeScript",
+      "AWS Lambda",
+      "AWS CDK",
+      "Bitbucket CI/CD",
+      "Datadog",
+      "Claude Code",
+      "Cursor",
+    ],
+  },
+  {
+    title: "Founder & Principal Engineer",
+    company: "SI8 Technology",
+    companyLink: "https://www.si8tech.com",
+    date: "Jan 2025 - Present",
+    description:
+      "Founded SI8 Technology, a full-stack engineering consultancy focused on AI-powered solutions. \
+      Built purchasing automation tooling that operates 300% faster than manual workflows in testing. \
+      Designed and implemented browser automation infrastructure using Playwright and Selenium.",
+    tags: [
+      "TypeScript",
+      "React",
+      "Playwright",
+      "Selenium",
+      "Shopify",
+      "Claude API",
+      "Web Automation",
+    ],
+  },
+  {
     title: "Full Stack Engineer",
     company: "GrainFox",
     companyLink: "https://grainfox.ca/",
@@ -49,11 +87,10 @@ const experiences = [
   {
     title: "Robotic Instructor",
     company: "Surrey Schools",
-    companyLink:
-      "https://www.sfu.ca/fas/news-and-outreach/years/2013/sticks-and-stars.html",
+    companyLink: "https://www.surreyschools.ca/",
     date: "Summer 2016, 2017",
     description:
-      "Instructed 25+ students cohorts in \
+      "Instructed 30+ students cohorts in \
     functional design, implementation, and programming. \
     Mentored up to 6 teams simultaneously through the project life cycle \
     to build and code autonomous robots.",

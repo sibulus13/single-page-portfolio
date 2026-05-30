@@ -1,59 +1,60 @@
 import React from "react";
 import Link from "next/link";
 
+const specs = [
+  { key: "degree",  val: "BASc Mechatronic Systems Engineering · SFU" },
+  { key: "exp",     val: "6+ years · 5 companies · 1 founded" },
+  { key: "method",  val: "Agentic AI-native development" },
+  { key: "base",    val: "Vancouver, BC" },
+];
+
 const About: React.FC = () => {
   return (
-    <div className="accent">
-      <p>
-        Back in 2016, I wrote my first program to breath life into an autonomous
-        robot for my degree. Seeing the impact of those lines of code sparked my
-        interest in software development, it was love at first sight. A few
-        years later, credited with a Bachelors of Applied Science in Mechatronic
-        Systems Engineering with a minor in AI, I was ready to take on the world
-        of tech.
-      </p>
-      <br />
-      <p>
-        Today, I am a Software Engineer with a focus on full-stack development,
-        having the privilege of amassing a diverse software development journey,
-        and completing software project life cycles for my{" "}
-        <Link href={"https://www.sfu.ca/"}>
-          <span className="clickable">school</span>
-        </Link>
-        , a{" "}
-        <Link href={"https://www.ballard.com/"}>
-          <span className="clickable">
-            leading global provider of clean energy solutions
-          </span>
-        </Link>
-        ,{" "}
-        <Link href={"https://www.ballard.com/"}>
-          <span className="clickable">a robotic start-up</span>
-        </Link>
-        , and a{" "}
-        <Link href={"https://www.grainfox.ca/"}>
-          <span className="clickable">
-            data-driven farm wealth solutions platform
-          </span>
-        </Link>
-        .
-      </p>
-      <br />
-      <p>
-        I take pride in building robust software that are both functional and
-        aesthetic. In my free time, I enjoy automating the mundane things, and
-        dabbling in new technology.
-      </p>
-      <br />
-      <p>
-        When I’m not tinkering away at my computer, you can find me fidgeting
-        with{" "}
-        <Link href={"#photography"}>
-          <span className="clickable">photography</span>
-        </Link>
-        , exploring the mountains, riding through the twisties, or being
-        whimsical with the ukulele.
-      </p>
+    <div>
+      {/* System spec table */}
+      <div className="mb-8 max-w-2xl border-t" style={{ borderColor: "var(--color-border)" }}>
+        {specs.map(({ key, val }) => (
+          <div
+            key={key}
+            className="grid grid-cols-[6rem_1fr] gap-4 py-2.5 border-b text-sm font-mono"
+            style={{ borderColor: "var(--color-border)" }}
+          >
+            <span style={{ color: "var(--color-text-3)" }}>{key}</span>
+            <span style={{ color: "var(--color-text-2)" }}>{val}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Prose */}
+      <div className="space-y-4 max-w-2xl text-sm leading-relaxed" style={{ color: "var(--color-text-2)" }}>
+        <p>
+          My engineering background is in{" "}
+          <Link href="https://www.sfu.ca/engineering/prospective-students/undergraduate-programs/mechatronic-systems-engineering.html" target="_blank" rel="noopener noreferrer">
+            <span className="clickable">Mechatronic Systems Engineering</span>
+          </Link>
+          {" "}— the discipline at the intersection of mechanical, electrical, and software systems.
+          I started writing code to animate autonomous robots, and never stopped.
+        </p>
+        <p>
+          Today I build production-grade software using AI-native workflows. At{" "}
+          <Link href="https://www.tractioncomplete.com" target="_blank" rel="noopener noreferrer">
+            <span className="clickable">Traction Complete</span>
+          </Link>
+          {" "}I introduced agentic development practices that improved feature delivery 5×. Through{" "}
+          <Link href="https://www.si8tech.com" target="_blank" rel="noopener noreferrer">
+            <span className="clickable">SI8 Technology</span>
+          </Link>
+          {" "}I apply that same approach to help teams ship faster without growing headcount.
+        </p>
+        <p>
+          Outside of code: I chase golden hours with a{" "}
+          <Link href="#photography">
+            <span className="clickable">camera</span>
+          </Link>
+          , explore mountain trails, ride through the twisties, and occasionally convince
+          myself the ukulele is coming along fine.
+        </p>
+      </div>
     </div>
   );
 };
