@@ -142,7 +142,10 @@ const Hero: React.FC = () => {
         <div
           ref={photoPanelRef}
           className="absolute left-0 top-0 w-full h-1/2 md:w-1/2 md:h-full overflow-hidden"
-          style={{ willChange: "clip-path" }}
+          style={{
+            willChange: "clip-path",
+            boxShadow: "8px 0 48px rgba(0,0,0,0.22)",
+          }}
         >
           <Image
             src="/founder.jpg"
@@ -151,6 +154,17 @@ const Hero: React.FC = () => {
             className="object-cover object-top"
             sizes="(min-width: 768px) 50vw, 100vw"
           />
+
+          {/* Soft gradient bleed — right edge on desktop, bottom on mobile */}
+          <div
+            className="hidden md:block absolute inset-y-0 right-0 w-32 pointer-events-none"
+            style={{ background: "linear-gradient(to right, transparent, var(--color-bg))" }}
+          />
+          <div
+            className="md:hidden absolute inset-x-0 bottom-0 h-32 pointer-events-none"
+            style={{ background: "linear-gradient(to bottom, transparent, var(--color-bg))" }}
+          />
+
           <p
             className="absolute bottom-5 left-5 text-xs font-mono pointer-events-none select-none"
             style={{ color: "rgba(255,255,255,0.35)" }}
