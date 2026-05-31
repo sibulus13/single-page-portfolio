@@ -175,12 +175,14 @@ const Hero: React.FC = () => {
             sizes="(min-width: 768px) 50vw, 100vw"
           />
 
-          {/* Portrait vignette — darkens edges, keeps face bright */}
+          {/* Portrait treatment — warm spotlight bloom + heavy cinematic vignette */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
-              background:
-                "radial-gradient(ellipse 75% 80% at 50% 30%, transparent 35%, rgba(0,0,0,0.6) 100%)",
+              background: [
+                "radial-gradient(ellipse 44% 50% at 50% 27%, rgba(255,228,190,0.18) 0%, transparent 65%)",
+                "radial-gradient(ellipse 75% 80% at 50% 30%, transparent 12%, rgba(0,0,0,0.92) 100%)",
+              ].join(", "),
             }}
           />
 
