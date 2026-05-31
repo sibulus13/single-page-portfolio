@@ -50,8 +50,8 @@ const Hero: React.FC = () => {
   const photoPanelRef = useRef<HTMLDivElement>(null);
   const overlayRef    = useRef<HTMLDivElement>(null);
   const textRef       = useRef<HTMLDivElement>(null);
-  // Store avatar center so collapse target is stable even after text has moved
-  const savedRect = useRef<{ cx: number; cy: number; r: number } | null>(null);
+  // Store avatar center + expand params so collapse can reconstruct the clip-path
+  const savedRect = useRef<{ cx: number; cy: number; r: number; bigR: number; isDesktop: boolean } | null>(null);
   const expandedRef = useRef(false);
   const [, forceUpdate] = useState(0);
 
@@ -62,6 +62,12 @@ const Hero: React.FC = () => {
     const textEl     = textRef.current;
     const s          = savedRect.current;
     if (!photoPanel || !overlay || !textEl || !s) return;
+
+    // clip-path was cleared after expand; restore it before reversing
+    gsap.set(photoPanel, {
+      borderRadius: 0,
+      clipPath: `circle(${s.bigR}px at ${s.cx}px ${s.cy}px)`,
+    });
 
     gsap.timeline({
       onComplete() {
@@ -101,12 +107,10 @@ const Hero: React.FC = () => {
     const rect = avatarEl.getBoundingClientRect();
     const cx   = rect.left + rect.width / 2;
     const cy   = rect.top  + rect.height / 2;
-    savedRect.current = { cx, cy, r: rect.width / 2 };
-
     const vw         = window.innerWidth;
     const isDesktop  = vw >= 768;
-    // Grow circle from avatar to cover the photo panel
-    const bigR = Math.ceil(Math.hypot(vw, window.innerHeight) * 1.5);
+    const bigR       = Math.ceil(Math.hypot(vw, window.innerHeight) * 1.5);
+    savedRect.current = { cx, cy, r: rect.width / 2, bigR, isDesktop };
 
     // Translate text so its left edge lands at vw/2 + 32px (desktop only)
     const textRect  = textEl.getBoundingClientRect();
@@ -120,7 +124,15 @@ const Hero: React.FC = () => {
     forceUpdate((n) => n + 1);
     gsap.set(overlay, { display: "block" });
 
-    gsap.timeline()
+    gsap.timeline({
+      onComplete() {
+        // Swap clip-path → border-radius so the CSS shape is stable at rest
+        gsap.set(photoPanel, {
+          clipPath: "none",
+          borderRadius: isDesktop ? "0 24px 24px 0" : "0 0 24px 24px",
+        });
+      },
+    })
       .fromTo(
         photoPanel,
         { clipPath: `circle(${rect.width / 2}px at ${cx}px ${cy}px)` },
