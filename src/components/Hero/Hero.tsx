@@ -7,7 +7,7 @@ import { FiExternalLink } from "react-icons/fi";
 const systemData = [
   { key: "role",     val: "AI-Native Full-Stack Engineer" },
   { key: "stack",    val: "Next.js · TypeScript · Supabase · Claude API" },
-  { key: "velocity", val: "5× faster with agentic workflows", accent: true },
+  { key: "velocity", val: "5x faster with agentic workflows", accent: true },
 ];
 
 const Hero: React.FC = () => {

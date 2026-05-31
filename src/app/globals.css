@@ -164,6 +164,10 @@
     color: var(--color-accent);
   }
 
+  .clickable:active {
+    transform: scale(0.97);
+  }
+
   .pill {
     @apply text-xs rounded-full text-center px-3 py-1 mr-1 mb-1 inline-block font-medium;
     color: var(--color-accent);
@@ -232,8 +236,8 @@
   100% { background-position: 28px 28px; }
 }
 
-.animate-fade-in { animation: fadeUp 0.5s ease-out both; }
-.animate-fade-up { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-fade-in { animation: fadeUp 0.35s ease-out both; }
+.animate-fade-up { animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; }
 .animate-grid    { animation: gridDrift 24s linear infinite; }
 
 .no-transitions * { transition: none !important; }
