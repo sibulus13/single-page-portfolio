@@ -11,7 +11,11 @@ blogs.sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date));
 
 function SectionHeader({ title }) {
   return (
-    <div className="pt-16 lg:pt-24 pb-8 border-t" style={{ borderColor: "var(--color-border)" }}>
+    <div
+      data-reveal
+      className="pt-16 lg:pt-24 pb-8 border-t"
+      style={{ borderColor: "var(--color-border)" }}
+    >
       <h2
         className="text-3xl md:text-4xl font-bold tracking-tight leading-none mt-5"
         style={{
@@ -47,12 +51,12 @@ export default function Home() {
 
       <div id="photography">
         <SectionHeader title="Gallery" />
-        <Photo />
+        <div data-reveal><Photo /></div>
       </div>
 
       <div id="blog">
         <SectionHeader title="Blog" />
-        <BlogSection posts={blogs} />
+        <div data-reveal><BlogSection posts={blogs} /></div>
       </div>
     </main>
   );

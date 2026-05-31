@@ -184,9 +184,11 @@ export default function Projects() {
   return (
     <section className="grid gap-8">
       {/* Featured — 2-column editorial cards */}
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="grid md:grid-cols-2 gap-4" data-reveal-stagger>
         {featured.map((p) => (
-          <FeaturedCard key={p.id} project={p} />
+          <div key={p.id} data-reveal-item>
+            <FeaturedCard project={p} />
+          </div>
         ))}
       </div>
 
@@ -202,9 +204,13 @@ export default function Projects() {
           <span className="text-xs font-mono" style={{ color: "var(--color-text-3)" }}>Status</span>
         </div>
 
-        {visible.map((p, i) => (
-          <ProjectRow key={p.id} project={p} index={i} />
-        ))}
+        <div data-reveal-stagger>
+          {visible.map((p, i) => (
+            <div key={p.id} data-reveal-item>
+              <ProjectRow project={p} index={i} />
+            </div>
+          ))}
+        </div>
       </div>
 
       {!showAll && rest.length > INITIAL_COUNT && (

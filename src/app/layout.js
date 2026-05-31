@@ -14,6 +14,10 @@ const OpenReplayNoSSR = dynamic(() => import("@/components/openReplay"), {
   ssr: false,
 });
 
+const SmoothScrollNoSSR = dynamic(() => import("@/components/SmoothScroll"), {
+  ssr: false,
+});
+
 const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-display",
@@ -39,6 +43,7 @@ export default function RootLayout({ children }) {
       >
         <Providers>
           <StructuredData />
+          <SmoothScrollNoSSR />
           <Header />
           {children}
           <OpenReplayNoSSR />
