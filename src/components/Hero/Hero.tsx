@@ -13,39 +13,21 @@ const ROWS = [
 ];
 
 function ScrambleRow({
-  label,
-  value,
-  accent,
-  delay,
+  label, value, accent, delay,
 }: {
-  label: string;
-  value: string;
-  accent: boolean;
-  delay: number;
+  label: string; value: string; accent: boolean; delay: number;
 }) {
   const display = useTextScramble(value, { delay, frames: 20 });
   return (
-    <div
-      className="flex items-baseline gap-0 py-1.5 border-b"
-      style={{ borderColor: "var(--color-border)" }}
-    >
-      <span
-        className="w-20 shrink-0 text-xs font-mono"
-        style={{ color: "var(--color-text-3)" }}
-      >
-        {label}
-      </span>
-      <span
-        className="text-sm font-mono"
-        style={{ color: accent ? "var(--color-accent)" : "var(--color-text-2)" }}
-      >
-        {display}
-      </span>
+    <div className="flex items-baseline gap-0 py-1.5 border-b" style={{ borderColor: "var(--color-border)" }}>
+      <span className="w-20 shrink-0 text-xs font-mono" style={{ color: "var(--color-text-3)" }}>{label}</span>
+      <span className="text-sm font-mono" style={{ color: accent ? "var(--color-accent)" : "var(--color-text-2)" }}>{display}</span>
     </div>
   );
 }
 
-const DIM_BG = "rgba(9,9,11,0.78)";
+const DIM_BG   = "rgba(9,9,11,0.78)";
+const RADIUS   = "48px"; // 3rem — the corner radius at full expansion
 
 const Hero: React.FC = () => {
   const avatarWrapRef = useRef<HTMLDivElement>(null);
@@ -54,7 +36,9 @@ const Hero: React.FC = () => {
   const rightDimRef   = useRef<HTMLDivElement>(null);
   const textRef       = useRef<HTMLDivElement>(null);
   const savedRect = useRef<{
-    cx: number; cy: number; r: number; bigR: number; isDesktop: boolean;
+    cx: number; cy: number; r: number;
+    startClip: string; endClip: string;
+    isDesktop: boolean;
   } | null>(null);
   const expandedRef = useRef(false);
   const [, forceUpdate] = useState(0);
@@ -68,27 +52,26 @@ const Hero: React.FC = () => {
     const s          = savedRect.current;
     if (!photoPanel || !overlay || !rightDim || !textEl || !s) return;
 
-    // Restore full-panel clip-path (was swapped to border-radius after expand)
-    gsap.set(photoPanel, {
-      clearProps: "borderRadius",
-      clipPath: `circle(${s.bigR}px at ${s.cx}px ${s.cy}px)`,
-    });
+    // Restore the fully-expanded inset state before reversing
+    gsap.set(photoPanel, { clipPath: s.endClip });
 
     gsap.timeline({
       onComplete() {
         gsap.set(overlay, { display: "none" });
-        gsap.set(photoPanel, { clearProps: "filter" });
+        gsap.set(photoPanel, { clearProps: "clipPath,filter,boxShadow" });
         expandedRef.current = false;
         forceUpdate((n) => n + 1);
         (window as unknown as { __lenis?: { start(): void } }).__lenis?.start();
       },
     })
-      // Clip shrinks back to avatar
-      .to(photoPanel, { clipPath: `circle(${s.r}px at ${s.cx}px ${s.cy}px)`, duration: 0.7, ease: "power3.inOut" }, 0)
+      // Inset grows back to the small avatar-circle shape
+      .to(photoPanel, { clipPath: s.startClip, duration: 0.7, ease: "power3.inOut" }, 0)
       // Text slides home
       .to(textEl,     { x: 0, duration: 0.7, ease: "power3.inOut" }, 0)
-      // Photo drains back to greyscale as it collapses
+      // Photo drains back to greyscale
       .to(photoPanel, { filter: "grayscale(1)", duration: 0.45, ease: "power2.in" }, 0)
+      // Shadow fades before the clip fully closes
+      .to(photoPanel, { boxShadow: "0 0 0px rgba(0,0,0,0)", duration: 0.4, ease: "power2.in" }, 0)
       // Dim fades out
       .to(rightDim,   { opacity: 0, duration: 0.4, ease: "power2.in" }, 0);
   }, []);
@@ -111,10 +94,29 @@ const Hero: React.FC = () => {
     const rect      = avatarEl.getBoundingClientRect();
     const cx        = rect.left + rect.width / 2;
     const cy        = rect.top  + rect.height / 2;
+    const r         = rect.width / 2;
     const vw        = window.innerWidth;
+    const vh        = window.innerHeight;
     const isDesktop = vw >= 768;
-    const bigR      = Math.ceil(Math.hypot(vw, window.innerHeight) * 1.5);
-    savedRect.current = { cx, cy, r: rect.width / 2, bigR, isDesktop };
+
+    // Panel dimensions — photo panel covers left-half (desktop) or top-half (mobile)
+    const panelW = isDesktop ? vw / 2 : vw;
+    const panelH = isDesktop ? vh : vh / 2;
+
+    // inset() start: a square inset at the avatar centre with 999px rounding
+    // (999px caps at r=20px on a 40×40 box → appears as a perfect circle)
+    const iT = Math.max(0, cy - r);
+    const iR = Math.max(0, panelW - cx - r);
+    const iB = Math.max(0, panelH - cy - r);
+    const iL = Math.max(0, cx - r);
+    const startClip = `inset(${iT}px ${iR}px ${iB}px ${iL}px round 999px 999px 999px 999px)`;
+
+    // inset() end: full panel, right corners rounded (desktop) or bottom corners (mobile)
+    const endClip = isDesktop
+      ? `inset(0px 0px 0px 0px round 0px ${RADIUS} ${RADIUS} 0px)`
+      : `inset(0px 0px 0px 0px round 0px 0px ${RADIUS} ${RADIUS})`;
+
+    savedRect.current = { cx, cy, r, startClip, endClip, isDesktop };
 
     const textRect = textEl.getBoundingClientRect();
     const deltaX   = isDesktop ? Math.round(vw / 2 + 32 - textRect.left) : 0;
@@ -124,32 +126,30 @@ const Hero: React.FC = () => {
     expandedRef.current = true;
     forceUpdate((n) => n + 1);
 
-    // Initialise overlay state before making it visible
-    gsap.set(photoPanel, { filter: "grayscale(1)" });
-    gsap.set(rightDim,   { opacity: 0 });
-    gsap.set(overlay,    { display: "block" });
+    gsap.set(photoPanel, {
+      filter: "grayscale(1)",
+      boxShadow: "0 0 0px rgba(0,0,0,0)",
+    });
+    gsap.set(rightDim, { opacity: 0 });
+    gsap.set(overlay,  { display: "block" });
 
     gsap.timeline()
-      // Radial expand from avatar centre
+      // inset shrinks outward from avatar-circle to full rounded panel —
+      // border-radius curves continuously because it's part of the clip-path
       .fromTo(
         photoPanel,
-        { clipPath: `circle(${rect.width / 2}px at ${cx}px ${cy}px)` },
-        { clipPath: `circle(${bigR}px at ${cx}px ${cy}px)`, duration: 0.82, ease: "power3.inOut" },
+        { clipPath: startClip },
+        { clipPath: endClip, duration: 0.9, ease: "power3.inOut" },
         0
       )
       // Text slides to right half
       .to(textEl,     { x: deltaX, duration: 0.82, ease: "power3.inOut" }, 0)
-      // Greyscale lifts across the full expand — photo "comes to life"
+      // Photo comes to life — greyscale lifts across the full expand
       .to(photoPanel, { filter: "grayscale(0)", duration: 0.95, ease: "power2.inOut" }, 0)
-      // Dark dim rises on the opposite side (slight delay for layered feel)
-      .to(rightDim,   { opacity: 1, duration: 0.6, ease: "power2.out" }, 0.18)
-      // Swap clip-path → border-radius exactly when the circle finishes expanding
-      .call(() => {
-        gsap.set(photoPanel, {
-          clipPath: "none",
-          borderRadius: isDesktop ? "0 3rem 3rem 0" : "0 0 3rem 3rem",
-        });
-      }, undefined, 0.82);
+      // Shadow materialises mid-expand (box-shadow is not clipped, so delay it)
+      .to(photoPanel, { boxShadow: "0 0 80px rgba(0,0,0,0.5)", duration: 0.5, ease: "power2.out" }, 0.45)
+      // Dark dim rises on the opposite side
+      .to(rightDim,   { opacity: 1, duration: 0.6, ease: "power2.out" }, 0.18);
   }, []);
 
   return (
@@ -161,11 +161,11 @@ const Hero: React.FC = () => {
         style={{ display: "none" }}
         onClick={handleCollapse}
       >
-        {/* Portrait panel — left half desktop / top half mobile */}
+        {/* Portrait panel */}
         <div
           ref={photoPanelRef}
           className="absolute left-0 top-0 w-full h-1/2 md:w-1/2 md:h-full overflow-hidden"
-          style={{ willChange: "clip-path", boxShadow: "0 0 80px rgba(0,0,0,0.5)" }}
+          style={{ willChange: "clip-path" }}
         >
           <Image
             src="/founder.jpg"
@@ -184,7 +184,7 @@ const Hero: React.FC = () => {
             }}
           />
 
-          {/* Edge bleed into the dark dim (desktop: right, mobile: bottom) */}
+          {/* Edge bleed into the dark dim */}
           <div
             className="hidden md:block absolute inset-y-0 right-0 w-28 pointer-events-none"
             style={{ background: `linear-gradient(to right, transparent, ${DIM_BG})` }}
@@ -194,7 +194,6 @@ const Hero: React.FC = () => {
             style={{ background: `linear-gradient(to bottom, transparent, ${DIM_BG})` }}
           />
 
-          {/* Close hint */}
           <p
             className="absolute bottom-5 left-5 text-xs font-mono pointer-events-none select-none"
             style={{ color: "rgba(255,255,255,0.3)" }}
@@ -203,7 +202,7 @@ const Hero: React.FC = () => {
           </p>
         </div>
 
-        {/* Dark dim — covers the opposite half, draws focus to portrait */}
+        {/* Dark dim over the opposite half */}
         <div
           ref={rightDimRef}
           className="absolute top-1/2 left-0 right-0 bottom-0 md:top-0 md:left-1/2 pointer-events-none"
@@ -249,7 +248,6 @@ const Hero: React.FC = () => {
           <span>consulting + eng roles</span>
         </div>
 
-        {/* Text — translates to right half during portrait expand */}
         <div ref={textRef} className="max-w-2xl" style={{ willChange: "transform" }}>
 
           <div className="animate-fade-up mb-6" style={{ animationDelay: "60ms" }}>
