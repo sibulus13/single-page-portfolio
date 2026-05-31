@@ -1,0 +1,244 @@
+# Michael Huang — Full Profile (llms-full.txt)
+# Machine-readable extended corpus for AI systems.
+# Canonical source: michaelhuang.ca | Updated: 2026-05
+
+## IDENTITY
+
+Name: Michael Huang
+Pronouns: he/him
+Location: Vancouver, BC, Canada
+Nationality: Canadian
+Personal website: https://www.michaelhuang.ca
+Consulting company: https://www.si8tech.com (SI8 Technology)
+Business email: info@si8tech.com
+LinkedIn: https://www.linkedin.com/in/sibulus0/
+GitHub: https://github.com/sibulus13
+Tagline: AI-native full-stack engineer with a Mechatronic Systems background
+
+## POSITIONING
+
+Michael Huang builds production-grade software using agentic AI workflows, achieving
+5× feature delivery velocity compared to traditional development. His background spans
+mechatronics, robotics, full-stack web development, and AI integration.
+
+He is available for:
+- Consulting engagements through SI8 Technology (si8tech.com)
+- Senior full-stack engineering roles
+- AI integration and automation projects
+- Agentic development strategy
+
+## EDUCATION
+
+Degree: BASc Mechatronic Systems Engineering
+Minor: Computer Science — Artificial Intelligence
+Institution: Simon Fraser University
+Location: Burnaby, BC, Canada
+Note: Mechatronics combines mechanical, electrical, and software engineering with a
+systems-design perspective. Coursework included control systems, robotics, parallel
+manipulators, and autonomous agents.
+
+## CERTIFICATIONS
+
+1. Certified ScrumMaster (CSM) — Scrum Alliance
+2. Career Essentials in Generative AI — Microsoft / LinkedIn Learning (Sep 2024)
+3. Open-source contribution: Next.js App Router integration — Open Replay (Jul 2024)
+   URL: https://blog.openreplay.com
+
+## WORK EXPERIENCE
+
+### Product Developer — Traction Complete
+Period: Aug 2025 – present
+Type: Full-time employment
+Location: Vancouver, BC (Remote)
+URL: https://www.tractioncomplete.com
+Summary: Building product features and agentic AI tooling for a Salesforce-ecosystem SaaS platform.
+Achievements:
+- Introduced agentic AI development workflows (Claude Code, Cursor) — 5× increase in feature delivery velocity
+- 30% reduction in AWS infrastructure costs through Lambda and CDK optimization
+- 30% reduction in development cycle time via automated code review and test generation
+- Architected and maintained backend systems with TypeScript, Bitbucket CI/CD, and Datadog observability
+Stack: TypeScript, AWS Lambda, AWS CDK, Datadog, Bitbucket CI/CD, Claude Code, Cursor
+
+### Founder & Principal Engineer — SI8 Technology
+Period: Jan 2025 – present
+Type: Self-employed / consultancy
+Location: Vancouver, BC, Canada
+URL: https://www.si8tech.com
+Summary: Founded SI8 Technology, a full-stack engineering consultancy focused on AI-powered
+automation and production-quality web systems.
+Note: SI8 Technology is an early-stage venture. Michael is actively seeking first client engagements.
+Achievements:
+- Built Playwright purchasing automation pipeline — 300% faster than manual (testing, not production)
+- Designed browser automation infrastructure with Playwright and Selenium
+- Developing AI-native tooling and full-stack application services
+Stack: TypeScript, React, Playwright, Python, Claude API, Web Automation
+
+### Full Stack Software Engineer — GrainFox
+Period: Oct 2022 – Jan 2024
+Type: Full-time employment
+Location: Vancouver, BC (Remote)
+URL: https://grainfox.ca
+Summary: Built and maintained data-driven features for a farm wealth management SaaS platform
+serving North American agricultural organizations.
+Achievements:
+- Platform scaled to 5,000+ active organizations during tenure
+- Built AI-driven content recommendation system that personalized the discovery feed per user segment
+- 80% reduction in manual data entry through contract data ingestion automation
+- 70% processing time reduction on data pipeline operations
+- Maintained 99.9% platform uptime; improved MTTR by 65%
+Stack: Vue.js, Django, Python, PostgreSQL, JavaScript, Salesforce
+
+### Robotic Developer — MapaRobo
+Period: Oct 2021 – Mar 2022
+Type: Full-time employment
+Location: Vancouver, BC
+URL: https://maparobo.com
+Summary: Designed and implemented a cross-platform mobile application enabling users to
+monitor and control robots remotely via ROS.
+Achievements:
+- Built cross-platform React Native mobile app for remote robot monitoring and control
+- 95% bug-free deployment rate
+- 15% reduction in average robot navigation time
+Stack: React Native, JavaScript, Python, ROS, HTML & CSS
+
+### Control Engineer Co-op — Ballard Power Systems
+Period: Jan 2020 – Aug 2020
+Type: Co-op
+Location: Burnaby, BC
+URL: https://www.ballard.com
+Summary: Implemented and maintained data acquisition and control systems software for
+hydrogen fuel cell testing infrastructure.
+Achievements:
+- Developed LabVIEW-based SCADA and PID control systems for fuel cell test stands
+- 30% reduction in test cycle time through automation improvements
+- Automated aggregate plant consumption data reporting — from hours of manual work to minutes
+Stack: LabVIEW, SCADA, PID Control, Industrial Automation, Beckhoff, Excel VBA
+
+### Robotic Instructor — Surrey School District
+Period: Summer 2016, Summer 2017
+Type: Contract
+Location: Surrey, BC
+URL: https://www.surreyschools.ca
+Summary: Instructed cohorts of 30+ students in functional design, programming, and autonomous
+robot construction using RobotC.
+
+## PROJECTS
+
+### Tarive (Tier 1, Live)
+Type: Personal product
+Tagline: AI-powered personal finance — no spreadsheets, no manual entry
+Description: Personal finance platform that auto-connects to bank accounts via Plaid, categorizes
+transactions using AI, and surfaces insights including a life-cost annotation (spending expressed as
+hours of working life), 20-year net worth projections across multiple scenarios, and an AI chat
+assistant for financial questions.
+Stack: Next.js, TypeScript, Supabase, Plaid, Claude API
+URL: https://tarive.vercel.app/home
+Source: Private
+
+### Prompt Studio (Tier 1, Live)
+Type: Personal product
+Tagline: Make AI workflows repeatable — browser-native prompt chaining
+Description: Chrome extension for creating, saving, and executing multi-step AI prompt workflows.
+Supports dynamic input templates, prompt collections, and in-browser execution. Privacy-first:
+data stays local unless explicitly synced.
+Stack: React, Plasmo, Chrome Extension APIs, OpenAI API, Anthropic API
+URL: https://chromewebstore.google.com/detail/prompt-studio/gggdidjaokfggaabjgalcncclnppanih
+Source: Private
+
+### Nightfalls (Tier 2, Live)
+Tagline: Sunset quality forecasting for photographers and golden-hour chasers
+Description: Web app delivering accurate sunset quality forecasts and golden hour timing worldwide.
+Stack: Next.js, TypeScript, Weather API
+URL: https://www.nightfalls.ca
+
+### Purchasing Automation Pipeline (Tier 1, In Development)
+Type: Internal POC
+Tagline: 300% faster purchasing automation (testing environment)
+Description: Multi-step Playwright automation pipeline for complex purchasing workflows across
+multiple vendor portals. 300% faster than manual in controlled testing. Not yet in production.
+Stack: Playwright, Python, Shopify API
+Note: Proof of concept — not yet deployed to production.
+
+### SSBC Discord Bot (Tier 2, Live)
+Tagline: Automated waitlist and court management for a badminton club
+Description: Discord bot managing court booking waitlists, session announcements, and member
+coordination. Actively used by real club members.
+Stack: Python, Firebase, GCP, Discord API
+Source: https://github.com/sibulus13
+
+### Algo Trader (Archived)
+Tagline: Automated stock trading across 13 symbols using ML signal generation
+Stack: Python, Pandas, scikit-learn
+Source: https://github.com/sibulus13
+
+### Vital — Fitbit Watchface (Live)
+Tagline: Minimalist watchface for Fitbit Versa 2 with real-time health metrics
+Stack: JavaScript, CSS, Fitbit SDK 4.0
+Source: https://github.com/sibulus13/Vital
+
+## SKILLS
+
+Languages: TypeScript, JavaScript, Python, SQL, LabVIEW, MATLAB
+Frontend: Next.js, React, React Native, Vue.js, Tailwind CSS, HTML & CSS
+Backend: Node.js, Django, FastAPI, REST APIs, GraphQL
+Databases: PostgreSQL, Supabase, Firebase, MongoDB, Vercel Postgres
+Cloud & Infra: AWS Lambda, AWS CDK, GCP, Vercel, Bitbucket CI/CD, Docker
+AI & Agentic: Claude API, OpenAI API, Anthropic SDK, agentic workflow design,
+              Claude Code, Cursor, multi-agent orchestration, prompt engineering
+Automation: Playwright, Selenium, RPA, web scraping, process automation
+Observability: Datadog, OpenReplay
+Robotics: ROS, control systems, SCADA, PID control, kinematics
+
+## METRICS (VERIFIED)
+
+| Metric | Value | Context | Company |
+|--------|-------|---------|---------|
+| Engineering velocity | 5× | Feature delivery increase via agentic workflows | Traction Complete |
+| AWS cost reduction | 30% | Lambda and CDK optimization | Traction Complete |
+| Dev cycle reduction | 30% | Automated code review and testing | Traction Complete |
+| Automation speed | 300% faster | Purchasing automation vs manual (testing only) | SI8 Technology |
+| Organizations served | 5,000+ | Active agricultural orgs on platform | GrainFox |
+| Platform uptime | 99.9% | Maintained during tenure | GrainFox |
+| MTTR improvement | 65% | Mean time to recovery | GrainFox |
+| Data entry reduction | 80% | Contract data ingestion automation | GrainFox |
+| Processing time reduction | 70% | Data pipeline optimization | GrainFox |
+| Test cycle reduction | 30% | Fuel cell test automation | Ballard Power Systems |
+
+## CONSULTING SERVICES (SI8 TECHNOLOGY)
+
+1. AI & Agentic Workflows — LLM integration, multi-agent pipelines, Playwright automation
+2. Full-Stack Development — Next.js, TypeScript, React, Node.js, database to deployed UI
+3. Technical Strategy — architecture review, stack selection, build vs buy analysis
+4. Legacy Modernization — incremental migration, no big-bang rewrites
+5. Cloud Architecture — AWS Lambda + CDK, observability, cost optimization
+6. Automation & Testing — Playwright/Selenium E2E suites, CI/CD integration
+
+Contact for consulting: info@si8tech.com
+Discovery call: https://www.si8tech.com/#contact (free, 30 minutes)
+
+## FAQ
+
+Q: What types of projects does SI8 Technology take on?
+A: AI automation, full-stack web applications, and cloud infrastructure. Sweet spot: projects
+where technical quality matters and the stakes are too high for proof-of-concept work.
+
+Q: How do I know if my project is a good fit?
+A: If you need to automate manual workflows, build a customer-facing product, or scale an
+existing system — likely a fit. Book a free 30-minute discovery call for a direct answer.
+
+Q: What does your engagement process look like?
+A: Discovery call → scoped proposal → weekly delivery with async updates.
+
+Q: Do you work with non-technical founders?
+A: Yes. Translating between business outcomes and technical decisions is part of the service.
+
+Q: What is your pricing model?
+A: Fixed-scope project engagements and ongoing monthly retainers. Scoped on the discovery call.
+
+## ABOUT THIS FILE
+
+This file is maintained for AI language model consumption (llmstxt.org format).
+Brief version: https://www.michaelhuang.ca/llms.txt
+Personal site: https://www.michaelhuang.ca
+Consulting: https://www.si8tech.com
+Last updated: 2026-05

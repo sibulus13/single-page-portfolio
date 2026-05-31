@@ -1,25 +1,84 @@
 # Michael Huang — michaelhuang.ca
 
 Michael Huang is an AI-native full-stack engineer and consultant based in Vancouver, BC, Canada.
+He is the founder of SI8 Technology (si8tech.com) and a Product Developer at Traction Complete.
 
-## What this site covers
-- Professional background and work history (2016–present)
-- Engineering projects: Tarive (cross-platform mobile app), Prompt Studio, SI8 purchasing automation
-- Technical writing and case studies
-- Contact information and consulting availability
+## Identity
+- Full name: Michael Huang
+- Location: Vancouver, BC, Canada
+- Personal site: https://www.michaelhuang.ca
+- Consulting company: https://www.si8tech.com
+- LinkedIn: https://www.linkedin.com/in/sibulus0/
+- GitHub: https://github.com/sibulus13
+- Business contact: info@si8tech.com
 
-## Key facts
-- Current roles: Senior Software Engineer at Traction Complete (Aug 2025–present); Founder & Principal Engineer at SI8 Technology (Jan 2025–present)
-- Previous: Full Stack Engineer at GrainFox (Oct 2022–Jan 2024), Robotic Developer at MapaRobo (Oct 2021–Mar 2022), Control Engineer Co-op at Ballard Power Systems (Jan–Aug 2020)
-- Education: Simon Fraser University, Computer Science
-- Core skills: TypeScript, Next.js, React Native, Python, AWS Lambda/CDK, Anthropic Claude API, agentic workflow design, Playwright/Selenium
-- Achievements: 5× engineering velocity via agentic workflows, 30% AWS infrastructure cost reduction, 80% reduction in manual data entry at GrainFox
-- Open to: consulting engagements, senior full-stack engineering roles, AI integration projects
+## Positioning
+AI-native full-stack engineer with a Mechatronic Systems Engineering background.
+Builds production-grade software 5× faster using agentic AI workflows (Claude Code, Cursor).
+Available for consulting engagements and senior full-stack engineering roles.
 
-## Contact
-Email: chengjie.michael.huang@gmail.com
-LinkedIn: https://linkedin.com/in/michaelchuang
-GitHub: https://github.com/michael-c-huang
+## Education
+- BASc Mechatronic Systems Engineering, minor Computer Science — Artificial Intelligence
+  Simon Fraser University, Burnaby, BC, Canada
+- Certified ScrumMaster (CSM) — Scrum Alliance
+- Career Essentials in Generative AI — Microsoft / LinkedIn Learning (Sep 2024)
 
-## Related site
-SI8 Technology (Michael's consulting company): https://www.si8tech.com
+## Experience (most recent first)
+- Product Developer, Traction Complete (Aug 2025 – present)
+  Introduced agentic AI workflows (Claude Code, Cursor); 5× feature delivery velocity increase.
+  30% AWS infrastructure cost reduction via Lambda and CDK optimization.
+  30% reduction in development cycle time via automated code review and test generation.
+  Stack: TypeScript, AWS Lambda, AWS CDK, Datadog, Bitbucket CI/CD
+
+- Founder & Principal Engineer, SI8 Technology (Jan 2025 – present)
+  Full-stack engineering consultancy focused on AI automation and production web systems.
+  Built Playwright purchasing automation pipeline — 300% faster than manual (testing, not production).
+  Stack: TypeScript, React, Playwright, Python, Claude API
+
+- Full Stack Software Engineer, GrainFox (Oct 2022 – Jan 2024)
+  Platform scaled to 5,000+ active agricultural organizations.
+  80% reduction in manual data entry; 70% processing time reduction; 99.9% uptime.
+  Built AI-driven content recommendation system for user feed personalization.
+  Stack: Vue.js, Django, Python, PostgreSQL, JavaScript, Salesforce
+
+- Robotic Developer, MapaRobo (Oct 2021 – Mar 2022)
+  Cross-platform React Native mobile app for remote robot monitoring and control via ROS.
+  95% bug-free deployment rate; 15% reduction in robot navigation time.
+
+- Control Engineer Co-op, Ballard Power Systems (Jan 2020 – Aug 2020)
+  LabVIEW SCADA and PID control systems for hydrogen fuel cell test stands.
+  30% test cycle time reduction; automated aggregate plant consumption reporting.
+
+## Key metrics (verified)
+- 5× engineering velocity via agentic AI workflows (Traction Complete)
+- 30% AWS infrastructure cost reduction (Traction Complete)
+- 80% reduction in manual data entry (GrainFox)
+- 99.9% platform uptime (GrainFox)
+- 5,000+ organizations served (GrainFox)
+- 300% faster purchasing automation (SI8 Technology — testing only, not production)
+
+## Featured projects
+- Tarive: AI-powered personal finance platform. Auto-connects to bank accounts via Plaid,
+  categorizes transactions with AI, surfaces life-cost annotations and 20-year net worth projections.
+  Stack: Next.js, TypeScript, Supabase, Plaid, Claude API. Live: https://tarive.vercel.app/home
+
+- Prompt Studio: Chrome extension for multi-step AI prompt workflows.
+  Privacy-first, browser-native, supports dynamic templates and prompt chaining.
+  Stack: React, Plasmo, Chrome Extension APIs, OpenAI API, Anthropic API.
+  Live: https://chromewebstore.google.com/detail/prompt-studio/gggdidjaokfggaabjgalcncclnppanih
+
+- Nightfalls: Sunset quality forecasting for photographers and golden-hour chasers.
+  Live: https://www.nightfalls.ca
+
+## Core skills
+TypeScript, Next.js, React, React Native, Python, AWS Lambda, AWS CDK, Supabase,
+PostgreSQL, Claude API, OpenAI API, Playwright, Selenium, Vue.js, Django,
+agentic workflow design, AI integration, cloud architecture
+
+## Availability
+Open to: consulting engagements (via SI8 Technology), senior full-stack engineering roles,
+AI integration projects, agentic development consulting.
+Contact: info@si8tech.com | https://www.si8tech.com/#contact
+
+## Related resource
+Full machine-readable profile: https://www.michaelhuang.ca/llms-full.txt
