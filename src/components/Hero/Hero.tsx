@@ -63,10 +63,9 @@ const Hero: React.FC = () => {
     const s          = savedRect.current;
     if (!photoPanel || !overlay || !textEl || !s) return;
 
-    // Remove floating-card positioning and restore Tailwind class geometry
-    // before reversing, so the clip-path collapses from the right starting shape
+    // Restore clip-path (cleared after expand) before reversing
     gsap.set(photoPanel, {
-      clearProps: "top,left,bottom,right,width,height,borderRadius,border",
+      clearProps: "borderRadius",
       clipPath: `circle(${s.bigR}px at ${s.cx}px ${s.cy}px)`,
     });
 
@@ -127,18 +126,13 @@ const Hero: React.FC = () => {
 
     gsap.timeline({
       onComplete() {
-        // Float the panel off screen edges so all four corners show, then
-        // swap clip-path → border-radius so the rounded shape holds at rest
+        // Swap clip-path → border-radius; circle(bigR) already covers 100% of
+        // the panel so the snap is invisible. Use large radius so it reads as
+        // "full round" at panel scale — right corners only (desktop) or bottom
+        // corners only (mobile) since the other edges are flush with the screen.
         gsap.set(photoPanel, {
           clipPath: "none",
-          top: "1rem",
-          left: "1rem",
-          bottom: "1rem",
-          right: isDesktop ? "50%" : "1rem",
-          width: "",
-          height: "",
-          borderRadius: "1.5rem",
-          border: "1px solid var(--color-border)",
+          borderRadius: isDesktop ? "0 3rem 3rem 0" : "0 0 3rem 3rem",
         });
       },
     })
