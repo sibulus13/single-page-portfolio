@@ -27,7 +27,7 @@ function ScrambleRow({
 }
 
 const DIM_BG   = "rgba(9,9,11,0.78)";
-const RADIUS   = "48px"; // 3rem — the corner radius at full expansion
+const RADIUS   = "120px"; // corner radius at full expansion
 
 const Hero: React.FC = () => {
   const avatarWrapRef = useRef<HTMLDivElement>(null);
