@@ -1,7 +1,16 @@
+"use client";
 import React from "react";
-import Link from "next/link";
 import { FaArrowUp, FaLinkedin, FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
+
+function scrollToTop() {
+  const lenis = (window as unknown as { __lenis?: { scrollTo: (target: number) => void } }).__lenis;
+  if (lenis) {
+    lenis.scrollTo(0);
+  } else {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
 
 export default function Footer() {
   return (
@@ -29,7 +38,7 @@ export default function Footer() {
 
         {/* Right: socials + back to top */}
         <div className="flex items-center gap-4">
-          <Link
+          <a
             href="https://www.linkedin.com/in/sibulus0/"
             target="_blank"
             rel="noopener noreferrer"
@@ -37,8 +46,8 @@ export default function Footer() {
             aria-label="LinkedIn"
           >
             <FaLinkedin />
-          </Link>
-          <Link
+          </a>
+          <a
             href="https://github.com/sibulus13"
             target="_blank"
             rel="noopener noreferrer"
@@ -46,14 +55,14 @@ export default function Footer() {
             aria-label="GitHub"
           >
             <FaGithub />
-          </Link>
-          <Link
-            href="#home"
+          </a>
+          <button
+            onClick={scrollToTop}
             className="clickable text-lg"
             aria-label="Back to top"
           >
             <FaArrowUp />
-          </Link>
+          </button>
         </div>
       </div>
     </footer>

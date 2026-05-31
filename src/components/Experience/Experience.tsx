@@ -134,15 +134,6 @@ const Experience: React.FC = () => {
         </div>
       ))}
 
-      <div>
-        <Link
-          href="/Michael Huang Resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <p className="clickable">See my full resume</p>
-        </Link>
-      </div>
     </div>
   );
 };

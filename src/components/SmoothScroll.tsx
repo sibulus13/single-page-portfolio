@@ -16,6 +16,8 @@ export default function SmoothScroll() {
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       });
 
+      (window as unknown as { __lenis: typeof lenis }).__lenis = lenis;
+
       lenis.on("scroll", ScrollTrigger.update);
       gsap.ticker.add((time: number) => lenis.raf(time * 1000));
       gsap.ticker.lagSmoothing(0);
@@ -67,6 +69,7 @@ export default function SmoothScroll() {
       });
 
       return () => {
+        delete (window as unknown as { __lenis?: unknown }).__lenis;
         lenis.destroy();
         ScrollTrigger.getAll().forEach((t) => t.kill());
       };

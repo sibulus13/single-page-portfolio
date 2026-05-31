@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Link from "next/link";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import { projects, type Project } from "@/data/projects";
 
@@ -16,14 +15,39 @@ const STATUS_COLOR: Record<string, React.CSSProperties> = {
   archived:       { color: "var(--color-text-3)", backgroundColor: "transparent", borderColor: "var(--color-border-2)" },
 };
 
+type ProjectLink = { label: string; href: string; icon: React.ReactNode };
+
+function getLinks(project: Project): ProjectLink[] {
+  const links: ProjectLink[] = [];
+  if (project.live_url) {
+    links.push({ label: "Live site", href: project.live_url, icon: <FiExternalLink className="w-3.5 h-3.5" /> });
+  }
+  if (project.source_url && project.source_visibility === "public") {
+    links.push({ label: "Source", href: project.source_url, icon: <FiGithub className="w-3.5 h-3.5" /> });
+  }
+  return links;
+}
+
 function FeaturedCard({ project }: { project: Project }) {
+  const links = getLinks(project);
+  const [open, setOpen] = useState(false);
+
+  function handleCardClick() {
+    if (links.length === 1) {
+      window.open(links[0].href, "_blank", "noopener,noreferrer");
+    } else if (links.length > 1) {
+      setOpen((o) => !o);
+    }
+  }
+
   return (
     <div
-      className="p-6 rounded-2xl flex flex-col gap-3"
+      className={`group relative p-6 rounded-2xl flex flex-col gap-3 transition-colors duration-150 ${links.length > 0 ? "cursor-pointer" : ""}`}
       style={{
         backgroundColor: "var(--color-surface)",
         border: "1px solid var(--color-border)",
       }}
+      onClick={handleCardClick}
     >
       <div className="flex items-center justify-between">
         <span className="text-xs font-mono tracking-widest uppercase" style={{ color: "var(--color-text-3)" }}>
@@ -65,40 +89,51 @@ function FeaturedCard({ project }: { project: Project }) {
         ))}
       </div>
 
-      <div className="flex gap-4 pt-1">
-        {project.live_url && (
-          <Link
-            href={project.live_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-medium transition-colors"
-            style={{ color: "var(--color-accent)" }}
-          >
-            <FiExternalLink className="w-3.5 h-3.5" />
-            Live site
-          </Link>
-        )}
-        {project.source_url && project.source_visibility === "public" && (
-          <Link
-            href={project.source_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-medium transition-colors clickable"
-          >
-            <FiGithub className="w-3.5 h-3.5" />
-            Source
-          </Link>
-        )}
-      </div>
+      {/* Link bar — visible on hover (desktop) or toggled open (mobile) */}
+      {links.length > 0 && (
+        <div
+          className={`flex gap-4 pt-2 border-t transition-opacity duration-200 ${
+            open ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+          }`}
+          style={{ borderColor: "var(--color-border)" }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {links.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-medium transition-colors"
+              style={{ color: "var(--color-accent)" }}
+            >
+              {link.icon}
+              {link.label}
+            </a>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
 
 function ProjectRow({ project, index }: { project: Project; index: number }) {
+  const links = getLinks(project);
+  const [open, setOpen] = useState(false);
+
+  function handleRowClick() {
+    if (links.length === 1) {
+      window.open(links[0].href, "_blank", "noopener,noreferrer");
+    } else if (links.length > 1) {
+      setOpen((o) => !o);
+    }
+  }
+
   return (
     <div
-      className="group grid grid-cols-[2.5rem_1fr_auto] gap-3 items-start py-4 border-b"
+      className={`group grid grid-cols-[2.5rem_1fr_auto] gap-3 items-start py-4 border-b ${links.length > 0 ? "cursor-pointer" : ""}`}
       style={{ borderColor: "var(--color-border)" }}
+      onClick={handleRowClick}
     >
       {/* Row number */}
       <span
@@ -118,32 +153,29 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
             {project.name}
           </span>
 
-          {/* Links appear on hover */}
-          <span className="flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-            {project.live_url && (
-              <Link
-                href={project.live_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-xs transition-colors"
-                style={{ color: "var(--color-accent)" }}
-              >
-                <FiExternalLink className="w-3 h-3" />
-                Live
-              </Link>
-            )}
-            {project.source_url && project.source_visibility === "public" && (
-              <Link
-                href={project.source_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-xs transition-colors clickable"
-              >
-                <FiGithub className="w-3 h-3" />
-                Source
-              </Link>
-            )}
-          </span>
+          {/* Links — visible on hover (desktop) or open (mobile) */}
+          {links.length > 0 && (
+            <span
+              className={`flex items-center gap-3 transition-opacity duration-200 ${
+                open ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+              }`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {links.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-xs transition-colors"
+                  style={{ color: "var(--color-accent)" }}
+                >
+                  {link.icon}
+                  {link.label}
+                </a>
+              ))}
+            </span>
+          )}
         </div>
 
         <p className="text-xs mb-2" style={{ color: "var(--color-text-3)" }}>
