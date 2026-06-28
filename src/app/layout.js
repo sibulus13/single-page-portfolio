@@ -2,6 +2,7 @@ import { Fraunces, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import dynamic from "next/dynamic";
+import Script from "next/script";
 import { Providers } from "./provider";
 
 import "./globals.css";
@@ -52,8 +53,9 @@ export default function RootLayout({ children }) {
           <Footer />
         </Providers>
         {/* Mikibot (Pythia) chat widget — standalone Pythia Vercel deploy */}
-        <script
+        <Script
           src="https://pythia-iota.vercel.app/widget.js"
+          strategy="afterInteractive"
           data-pythia-api="https://pythia-iota.vercel.app/api/ask"
           data-pythia-site="michaelhuang.ca"
           data-pythia-title="Mikibot"
