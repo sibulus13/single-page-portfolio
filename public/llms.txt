@@ -14,7 +14,7 @@ He is the founder of SI8 Technology (si8tech.com) and a Product Developer at Tra
 
 ## Positioning
 AI-native full-stack engineer with a Mechatronic Systems Engineering background.
-Builds production-grade software 5× faster using agentic AI workflows (Claude Code, Cursor).
+Builds production-grade software 2–3× faster using agentic AI workflows (Claude Code, Cursor).
 Available for consulting engagements and senior full-stack engineering roles.
 
 ## Education
@@ -25,7 +25,7 @@ Available for consulting engagements and senior full-stack engineering roles.
 
 ## Experience (most recent first)
 - Product Developer, Traction Complete (Aug 2025 – present)
-  Introduced agentic AI workflows (Claude Code, Cursor); 5× feature delivery velocity increase.
+  Introduced agentic AI workflows (Claude Code, Cursor); 2–3× feature delivery velocity increase.
   30% AWS infrastructure cost reduction via Lambda and CDK optimization.
   30% reduction in development cycle time via automated code review and test generation.
   Stack: TypeScript, AWS Lambda, AWS CDK, Datadog, Bitbucket CI/CD
@@ -50,7 +50,7 @@ Available for consulting engagements and senior full-stack engineering roles.
   30% test cycle time reduction; automated aggregate plant consumption reporting.
 
 ## Key metrics (verified)
-- 5× engineering velocity via agentic AI workflows (Traction Complete)
+- 2–3× engineering velocity via agentic AI workflows (Traction Complete)
 - 30% AWS infrastructure cost reduction (Traction Complete)
 - 80% reduction in manual data entry (GrainFox)
 - 99.9% platform uptime (GrainFox)

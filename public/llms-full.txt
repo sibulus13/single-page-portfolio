@@ -18,7 +18,7 @@ Tagline: AI-native full-stack engineer with a Mechatronic Systems background
 ## POSITIONING
 
 Michael Huang builds production-grade software using agentic AI workflows, achieving
-5× feature delivery velocity compared to traditional development. His background spans
+2–3× feature delivery velocity compared to traditional development. His background spans
 mechatronics, robotics, full-stack web development, and AI integration.
 
 He is available for:
@@ -53,7 +53,7 @@ Location: Vancouver, BC (Remote)
 URL: https://www.tractioncomplete.com
 Summary: Building product features and agentic AI tooling for a Salesforce-ecosystem SaaS platform.
 Achievements:
-- Introduced agentic AI development workflows (Claude Code, Cursor) — 5× increase in feature delivery velocity
+- Introduced agentic AI development workflows (Claude Code, Cursor) — 2–3× increase in feature delivery velocity
 - 30% reduction in AWS infrastructure costs through Lambda and CDK optimization
 - 30% reduction in development cycle time via automated code review and test generation
 - Architected and maintained backend systems with TypeScript, Bitbucket CI/CD, and Datadog observability
@@ -193,7 +193,7 @@ Robotics: ROS, control systems, SCADA, PID control, kinematics
 
 | Metric | Value | Context | Company |
 |--------|-------|---------|---------|
-| Engineering velocity | 5× | Feature delivery increase via agentic workflows | Traction Complete |
+| Engineering velocity | 2–3× | Feature delivery increase via agentic workflows | Traction Complete |
 | AWS cost reduction | 30% | Lambda and CDK optimization | Traction Complete |
 | Dev cycle reduction | 30% | Automated code review and testing | Traction Complete |
 | Automation speed | 300% faster | Purchasing automation vs manual (testing only) | SI8 Technology |

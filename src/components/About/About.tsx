@@ -40,7 +40,7 @@ const About: React.FC = () => {
           <Link href="https://www.tractioncomplete.com" target="_blank" rel="noopener noreferrer">
             <span className="clickable">Traction Complete</span>
           </Link>
-          {" "}I introduced agentic development practices that improved feature delivery 5×. Through{" "}
+          {" "}I introduced agentic development practices that improved feature delivery 2–3×. Through{" "}
           <Link href="https://www.si8tech.com" target="_blank" rel="noopener noreferrer">
             <span className="clickable">SI8 Technology</span>
           </Link>

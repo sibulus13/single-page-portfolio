@@ -9,7 +9,7 @@ const personSchema = {
   image: `${BASE}/founder.jpg`,
   jobTitle: "AI-Native Full-Stack Engineer",
   description:
-    "AI-native full-stack engineer and consultant with a Mechatronic Systems Engineering background. Builds production systems 5× faster using agentic AI workflows (Claude Code, Cursor). Founder of SI8 Technology.",
+    "AI-native full-stack engineer and consultant with a Mechatronic Systems Engineering background. Builds production systems 2–3× faster using agentic AI workflows (Claude Code, Cursor). Founder of SI8 Technology.",
   worksFor: [
     {
       "@type": "Organization",
@@ -119,7 +119,7 @@ const faqSchema = {
       name: "What does an agentic AI workflow mean for software delivery?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Agentic workflows use AI agents (Claude Code, Cursor) to autonomously handle routine development tasks — code review, test generation, boilerplate — freeing engineers to focus on architecture and judgment calls. At Traction Complete, this produced a 5× increase in feature delivery velocity.",
+        text: "Agentic workflows use AI agents (Claude Code, Cursor) to autonomously handle routine development tasks — code review, test generation, boilerplate — freeing engineers to focus on architecture and judgment calls. At Traction Complete, this produced a 2–3× increase in feature delivery velocity.",
       },
     },
     {

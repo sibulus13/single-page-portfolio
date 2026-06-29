@@ -8,7 +8,7 @@ import { useTextScramble } from "@/hooks/useTextScramble";
 const ROWS = [
   { key: "role",     val: "AI-Native Full-Stack Engineer",               accent: false, delay: 280 },
   { key: "stack",    val: "Next.js · TypeScript · Supabase · Claude API", accent: false, delay: 430 },
-  { key: "velocity", val: "5x faster with agentic workflows",            accent: true,  delay: 580 },
+  { key: "velocity", val: "2–3x faster with agentic workflows",            accent: true,  delay: 580 },
 ];
 
 function ScrambleRow({

@@ -9,7 +9,7 @@ const experiences = [
     companyLink: "https://www.tractioncomplete.com/",
     date: "Aug 2025 - Present",
     description:
-      "Accelerated engineering velocity 5× by introducing agentic AI workflows into the development cycle. \
+      "Accelerated engineering velocity 2–3× by introducing agentic AI workflows into the development cycle. \
       Reduced AWS infrastructure costs by 30% through Lambda and CDK optimization. \
       Architected and maintained backend systems with TypeScript, Bitbucket CI/CD, and Datadog observability.",
     tags: [
