@@ -6,7 +6,7 @@ export default function PostEntry(props: any) {
   const { content, parentPath } = props;
   const { title, description, thumbnail, redirect } = content.fields;
   const { id } = content.sys;
-  const { url, title: alt } = thumbnail.fields.file;
+  const url = thumbnail?.fields?.file?.url ?? null; // optional — posts may have no thumbnail
   const tags = content.fields.tags ?? [];
   const githubLink = content.fields.githubLink ?? null;
 
@@ -27,8 +27,8 @@ export default function PostEntry(props: any) {
             id: id,
           },
         }}
-        className="bg-cover bg-center aspect-square rounded-3xl flex justify-center items-center transition duration-300 group-hover:scale-95 group-hover:opacity-60"
-        style={{ backgroundImage: `url("https:${url}")` }}
+        className="bg-cover bg-center aspect-square rounded-3xl flex justify-center items-center transition duration-300 group-hover:scale-95 group-hover:opacity-60 bg-zinc-200 dark:bg-zinc-800"
+        style={url ? { backgroundImage: `url("https:${url}")` } : undefined}
       ></Link>
       <div className="bg-white dark:bg-black bg-opacity-70 dark:bg-opacity-70 p-2 rounded-xl w-4/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
         <div className="flex items-center">
