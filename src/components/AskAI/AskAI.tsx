@@ -39,15 +39,15 @@ const AskAI: React.FC = () => {
           border: "1px solid var(--color-border)",
         }}
       >
-        <div
-          className="flex items-center gap-2 text-xs font-mono mb-3"
-          style={{ color: "var(--color-accent)" }}
-        >
+        <div className="flex items-center gap-2 text-xs font-mono mb-3">
+          {/* established "live" tag — same green pill as project status badges (Projects.tsx STATUS_COLOR.live) */}
           <span
-            className="w-1.5 h-1.5 rounded-full animate-pulse"
-            style={{ backgroundColor: "var(--color-accent)" }}
-          />
-          live · RAG chatbot
+            className="text-xs font-mono px-2 py-0.5 rounded-full border"
+            style={{ color: "#16a34a", backgroundColor: "rgba(22,163,74,0.08)", borderColor: "#16a34a" }}
+          >
+            live
+          </span>
+          <span style={{ color: "var(--color-text-3)" }}>RAG chatbot</span>
         </div>
 
         <p
