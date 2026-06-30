@@ -52,13 +52,13 @@ export default function RootLayout({ children }) {
           <SpeedInsights />
           <Footer />
         </Providers>
-        {/* Mikibot (Pythia) chat widget — standalone Pythia Vercel deploy */}
+        {/* Miko (Pythia) chat widget — standalone Pythia Vercel deploy */}
         <Script
           src="https://pythia-iota.vercel.app/widget.js"
           strategy="afterInteractive"
           data-pythia-api="https://pythia-iota.vercel.app/api/ask"
           data-pythia-site="michaelhuang.ca"
-          data-pythia-title="Mikibot"
+          data-pythia-title="Miko"
           data-pythia-contact="https://www.linkedin.com/in/sibulus0/"
           data-pythia-faq="What's Michael's background?|What is he building now?|How can I reach him?"
         />

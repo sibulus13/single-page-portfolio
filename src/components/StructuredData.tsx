@@ -131,7 +131,7 @@ const faqSchema = {
       name: "Does Michael Huang build RAG chatbots?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. The assistant on michaelhuang.ca (Mikibot) is a retrieval-augmented generation (RAG) chatbot Michael built — it answers questions about his experience, projects, and stack from a grounded knowledge base. Through SI8 Technology he builds similar RAG chatbots and AI automation systems for clients.",
+        text: "Yes. The assistant on michaelhuang.ca (Miko) is a retrieval-augmented generation (RAG) chatbot Michael built — it answers questions about his experience, projects, and stack from a grounded knowledge base. Through SI8 Technology he builds similar RAG chatbots and AI automation systems for clients.",
       },
     },
     {
