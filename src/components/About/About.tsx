@@ -36,7 +36,7 @@ const About: React.FC = () => {
           I started writing code to animate autonomous robots, and never stopped.
         </p>
         <p>
-          Today I build production-grade software using AI-native workflows. At{" "}
+          Today I build production-grade software with agentic AI workflows. At{" "}
           <Link href="https://www.tractioncomplete.com" target="_blank" rel="noopener noreferrer">
             <span className="clickable">Traction Complete</span>
           </Link>
@@ -44,7 +44,8 @@ const About: React.FC = () => {
           <Link href="https://www.si8tech.com" target="_blank" rel="noopener noreferrer">
             <span className="clickable">SI8 Technology</span>
           </Link>
-          {" "}I apply that same approach to help teams ship faster without growing headcount.
+          {" "}I work as an AI consultant — building AI automation, RAG chatbots, and full-stack
+          web systems that help teams ship faster without growing headcount.
         </p>
         <p>
           Outside of code: I chase golden hours with a{" "}

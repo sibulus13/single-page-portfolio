@@ -2,6 +2,7 @@ import Hero from "@/components/Hero/Hero";
 import About from "@/components/About/About";
 import Experience from "@/components/Experience/Experience";
 import Projects from "@/components/Projects/Projects";
+import AskAI from "@/components/AskAI/AskAI";
 import Photo from "@/components/Photo/Photo";
 import BlogSection from "@/components/Posts/BlogSection";
 import { getBlogPosts } from "@/lib/Contentful/Contentful";
@@ -42,6 +43,11 @@ export default function Home() {
       <div id="experience">
         <SectionHeader title="Experience" />
         <Experience />
+      </div>
+
+      <div id="ask-ai">
+        <SectionHeader title="Ask my AI" />
+        <AskAI />
       </div>
 
       <div id="projects">

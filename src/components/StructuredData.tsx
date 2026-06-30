@@ -9,7 +9,7 @@ const personSchema = {
   image: `${BASE}/founder.jpg`,
   jobTitle: "AI-Native Full-Stack Engineer",
   description:
-    "AI-native full-stack engineer and consultant with a Mechatronic Systems Engineering background. Builds production systems 2–3× faster using agentic AI workflows (Claude Code, Cursor). Founder of SI8 Technology.",
+    "AI-native full-stack engineer and AI consultant in Vancouver, BC with a Mechatronic Systems Engineering background. Builds agentic AI, AI automation, and RAG chatbot systems, shipping production software 2–3× faster using agentic workflows (Claude Code, Cursor). Founder of SI8 Technology.",
   worksFor: [
     {
       "@type": "Organization",
@@ -40,7 +40,11 @@ const personSchema = {
     },
   ],
   knowsAbout: [
+    "Agentic AI",
     "Agentic AI Workflows",
+    "AI Automation",
+    "RAG Chatbots",
+    "Retrieval-Augmented Generation",
     "AI Integration",
     "TypeScript",
     "Next.js",
@@ -120,6 +124,14 @@ const faqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Agentic workflows use AI agents (Claude Code, Cursor) to autonomously handle routine development tasks — code review, test generation, boilerplate — freeing engineers to focus on architecture and judgment calls. At Traction Complete, this produced a 2–3× increase in feature delivery velocity.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does Michael Huang build RAG chatbots?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. The assistant on michaelhuang.ca (Mikibot) is a retrieval-augmented generation (RAG) chatbot Michael built — it answers questions about his experience, projects, and stack from a grounded knowledge base. Through SI8 Technology he builds similar RAG chatbots and AI automation systems for clients.",
       },
     },
     {

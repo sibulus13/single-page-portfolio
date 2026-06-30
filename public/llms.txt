@@ -13,8 +13,8 @@ He is the founder of SI8 Technology (si8tech.com) and a Product Developer at Tra
 - Business contact: info@si8tech.com
 
 ## Positioning
-AI-native full-stack engineer with a Mechatronic Systems Engineering background.
-Builds production-grade software 2–3× faster using agentic AI workflows (Claude Code, Cursor).
+AI-native full-stack engineer and AI consultant (Vancouver, BC) with a Mechatronic Systems Engineering background.
+Builds agentic AI, AI automation, and RAG chatbot systems; ships production-grade software 2–3× faster using agentic AI workflows (Claude Code, Cursor).
 Available for consulting engagements and senior full-stack engineering roles.
 
 ## Education

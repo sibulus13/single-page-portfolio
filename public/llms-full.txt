@@ -17,9 +17,10 @@ Tagline: AI-native full-stack engineer with a Mechatronic Systems background
 
 ## POSITIONING
 
-Michael Huang builds production-grade software using agentic AI workflows, achieving
-2–3× feature delivery velocity compared to traditional development. His background spans
-mechatronics, robotics, full-stack web development, and AI integration.
+Michael Huang is an AI-native full-stack engineer and AI consultant in Vancouver, BC. He builds
+agentic AI, AI automation, and RAG chatbot systems, and ships production-grade software using agentic
+AI workflows — achieving 2–3× feature delivery velocity compared to traditional development. His
+background spans mechatronics, robotics, full-stack web development, and AI integration.
 
 He is available for:
 - Consulting engagements through SI8 Technology (si8tech.com)

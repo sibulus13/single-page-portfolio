@@ -8,6 +8,7 @@ import ThemeSwitch from "./ThemeSwitcher";
 const navLinks = [
   { label: "about",      href: "#about" },
   { label: "experience", href: "#experience" },
+  { label: "ask my ai",  href: "#ask-ai" },
   { label: "projects",   href: "#projects" },
   { label: "gallery",    href: "#photography" },
   { label: "blog",       href: "#blog" },
@@ -26,7 +27,7 @@ const Header: React.FC = () => {
       const total = document.documentElement.scrollHeight - window.innerHeight;
       setScrollProgress(total > 0 ? (window.scrollY / total) * 100 : 0);
 
-      const ids = ["about", "experience", "projects", "photography", "blog"];
+      const ids = ["about", "experience", "ask-ai", "projects", "photography", "blog"];
       for (const id of ids) {
         const el = document.getElementById(id);
         if (el) {

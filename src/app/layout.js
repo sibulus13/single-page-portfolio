@@ -74,13 +74,17 @@ export const metadata = {
     template: "%s | Michael Huang",
   },
   description:
-    "Michael Huang is an AI-native full-stack engineer and consultant based in Vancouver, BC. Founder of SI8 Technology. Builds production systems 2–3× faster using agentic AI workflows. BASc Mechatronic Systems Engineering, SFU. Open to consulting and senior engineering roles.",
+    "Michael Huang is an AI-native full-stack engineer and AI consultant in Vancouver, BC. Founder of SI8 Technology — building agentic AI, AI automation, and RAG chatbot systems, and shipping production software 2–3× faster with agentic workflows. 6+ years; open to consulting and senior engineering roles.",
   keywords: [
     "Michael Huang",
-    "AI-native engineer",
+    "AI-native full-stack engineer",
+    "AI engineer Vancouver",
+    "AI consultant",
+    "agentic AI",
+    "AI automation",
+    "RAG chatbot",
     "full-stack engineer Vancouver",
     "agentic workflow developer",
-    "AI consultant Vancouver",
     "SI8 Technology",
     "Next.js developer",
     "TypeScript engineer",
@@ -90,7 +94,6 @@ export const metadata = {
     "mechatronics engineer",
     "SFU engineering",
     "Traction Complete",
-    "agentic development",
     "LLM integration",
     "software consultant BC",
   ],
@@ -104,9 +107,9 @@ export const metadata = {
     locale: "en_CA",
     url: "https://www.michaelhuang.ca",
     siteName: "Michael Huang",
-    title: "Michael Huang — AI-Native Full-Stack Engineer & Consultant",
+    title: "Michael Huang — AI-Native Full-Stack Engineer & AI Consultant",
     description:
-      "AI-native full-stack engineer and consultant based in Vancouver, BC. Founder of SI8 Technology. Builds production systems 2–3× faster with agentic AI workflows.",
+      "AI engineer in Vancouver, BC building agentic AI, AI automation, and RAG chatbot systems. Founder of SI8 Technology. Ships production software 2–3× faster with agentic workflows.",
     images: [
       {
         url: "/og-image.jpg",
@@ -118,9 +121,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Michael Huang — AI-Native Full-Stack Engineer & Consultant",
+    title: "Michael Huang — AI-Native Full-Stack Engineer & AI Consultant",
     description:
-      "AI-native full-stack engineer and consultant. Building production systems 2–3× faster with agentic AI workflows. Founder of SI8 Technology, Vancouver BC.",
+      "AI engineer in Vancouver building agentic AI, AI automation, and RAG chatbots. Shipping production software 2–3× faster with agentic workflows. Founder of SI8 Technology.",
     images: ["/og-image.jpg"],
   },
   robots: {
