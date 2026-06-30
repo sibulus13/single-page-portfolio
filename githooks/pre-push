@@ -1,0 +1,8 @@
+#!/bin/sh
+# Version-controlled deploy gate. Vercel auto-deploys on push, so this is the blocker: if the production
+# build fails, the push aborts and the broken build never reaches Vercel. Runs the EXACT Vercel build
+# (incl. next lint) — catches what tsc alone misses (e.g. @next/next/no-sync-scripts).
+# Auto-installed via the package.json "prepare" script (sets core.hooksPath=githooks).
+echo "── pre-push gate: npm run build (next build — the exact Vercel build) ──"
+npm run build || { echo "❌ build failed — push aborted (this is what would have failed on Vercel)"; exit 1; }
+echo "✅ build passed"
