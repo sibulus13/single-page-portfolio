@@ -16,7 +16,10 @@ const QUESTIONS = [
  */
 function askMiko(question?: string) {
   const launcher = document.querySelector<HTMLButtonElement>(".pythia-btn");
-  if (launcher && launcher.offsetParent !== null) launcher.click(); // visible only until panel opens
+  // Open only if the launcher is showing (it's display:none once the panel is open). Use computed
+  // display, NOT offsetParent — a position:fixed launcher reports offsetParent=null even when visible
+  // (that bug sent the prompt without opening the panel on mobile).
+  if (launcher && getComputedStyle(launcher).display !== "none") launcher.click();
   if (!question) return;
   window.setTimeout(() => {
     const input = document.querySelector<HTMLInputElement>(".pythia-input");
