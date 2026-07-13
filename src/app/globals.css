@@ -59,13 +59,13 @@
   --color-text-2:    #52525b;
   --color-text-3:    #71717a;
 
-  /* Light mode accent */
-  --color-accent:     #8E4585;
-  --color-accent-dim: #7A3573;
-  --color-accent-deep: #371433;
-  --color-accent-sub:        rgba(142, 69, 133, 0.06);
-  --color-accent-sub-strong: rgba(142, 69, 133, 0.22);
-  --color-accent-400:        #C084C8;
+  /* Light mode accent — terracotta/rust (personal-brand hue; distinct from SI8's plum) */
+  --color-accent:     #C2410C;
+  --color-accent-dim: #9A3412;
+  --color-accent-deep: #431407;
+  --color-accent-sub:        rgba(194, 65, 12, 0.06);
+  --color-accent-sub-strong: rgba(194, 65, 12, 0.22);
+  --color-accent-400:        #EA580C;
 }
 
 .dark {
@@ -78,12 +78,12 @@
   --color-text-2:    #a1a1aa;
   --color-text-3:    #8b8b96;
 
-  --color-accent:     #C084C8;
-  --color-accent-dim: #A865A0;
-  --color-accent-deep: #4E1A4A;
-  --color-accent-sub:        rgba(192, 132, 200, 0.08);
-  --color-accent-sub-strong: rgba(192, 132, 200, 0.18);
-  --color-accent-400:        #DDB8E4;
+  --color-accent:     #FB923C;
+  --color-accent-dim: #F97316;
+  --color-accent-deep: #7C2D12;
+  --color-accent-sub:        rgba(251, 146, 60, 0.08);
+  --color-accent-sub-strong: rgba(251, 146, 60, 0.18);
+  --color-accent-400:        #FDBA74;
 }
 
 /* ── Base Styles ─────────────────────────────────────────── */
