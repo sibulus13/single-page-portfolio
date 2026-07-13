@@ -1,32 +1,25 @@
 import React from "react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
+import { slugify } from "@/lib/slug";
 
 export default function PostEntry(props: any) {
   const { content, parentPath } = props;
   const { title, description, thumbnail, redirect } = content.fields;
-  const { id } = content.sys;
   const url = thumbnail?.fields?.file?.url ?? null; // optional — posts may have no thumbnail
   const tags = content.fields.tags ?? [];
   const githubLink = content.fields.githubLink ?? null;
 
-  function redirectLink(): string {
-    if (redirect) {
-      return redirect;
-    } else {
-      return `/${parentPath}/` + title;
-    }
+  // Clean, URL-safe slug from the title (was `/Blog/<title with spaces>?id=<contentful-id>`).
+  function postHref(): string {
+    if (redirect) return redirect;
+    return `/${parentPath}/${slugify(title)}`;
   }
 
   return (
     <div className="relative group">
       <Link
-        href={{
-          pathname: redirectLink(),
-          query: {
-            id: id,
-          },
-        }}
+        href={postHref()}
         className="bg-cover bg-center aspect-square rounded-3xl flex justify-center items-center transition duration-300 group-hover:scale-95 group-hover:opacity-60 bg-zinc-200 dark:bg-zinc-800"
         style={url ? { backgroundImage: `url("https:${url}")` } : undefined}
       ></Link>

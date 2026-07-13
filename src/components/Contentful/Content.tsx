@@ -3,6 +3,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { options } from "@/lib/Contentful/Contentful";
 import { getPostContent } from "@/lib/Contentful/Contentful";
 import { Document } from "@contentful/rich-text-types";
+import { slugify } from "@/lib/slug";
 
 export default async function ContentfulContent({ id }: { id: string }) {
   const res = await getPostContent(id);
@@ -13,8 +14,28 @@ export default async function ContentfulContent({ id }: { id: string }) {
     date: string;
   };
 
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description,
+    datePublished: date,
+    dateModified: date,
+    author: {
+      "@type": "Person",
+      name: "Michael Huang",
+      url: "https://www.michaelhuang.ca",
+    },
+    publisher: { "@type": "Person", name: "Michael Huang" },
+    url: `https://www.michaelhuang.ca/Blog/${slugify(title)}`,
+  };
+
   return (
     <div className="py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+      />
       <div className="px-10 md:px-40 lg:px-60 mx-auto">
         <p className="date">{new Date(date).toLocaleDateString()}</p>
         <div className="flex justify-between">
