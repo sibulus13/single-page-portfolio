@@ -28,7 +28,7 @@ function ScrambleRow({
 const Hero: React.FC = () => {
   return (
     <section className="pt-24 pb-12 md:pt-32 md:pb-16">
-      <div className="md:flex md:items-start md:justify-between md:gap-10 lg:gap-16">
+      <div className="md:flex md:items-start md:gap-10 lg:gap-14 max-w-5xl">
         {/* Left — identity + content */}
         <div className="md:flex-1 md:min-w-0">
           <div
@@ -63,9 +63,9 @@ const Hero: React.FC = () => {
 
           <div className="max-w-2xl">
 
-            <div className="animate-fade-up mb-6" style={{ animationDelay: "60ms" }}>
-              <p
-                className="font-bold leading-[0.90] tracking-tighter"
+            <h1 className="animate-fade-up mb-6" style={{ animationDelay: "60ms" }}>
+              <span
+                className="block font-bold leading-[0.90] tracking-tighter"
                 style={{
                   fontSize: "clamp(3.25rem, 9vw, 6.5rem)",
                   fontFamily: "var(--font-display)",
@@ -74,9 +74,9 @@ const Hero: React.FC = () => {
                 }}
               >
                 Michael
-              </p>
-              <p
-                className="font-bold leading-[0.90] tracking-tighter"
+              </span>
+              <span
+                className="block font-bold leading-[0.90] tracking-tighter"
                 style={{
                   fontSize: "clamp(3.25rem, 9vw, 6.5rem)",
                   fontFamily: "var(--font-display)",
@@ -86,8 +86,8 @@ const Hero: React.FC = () => {
               >
                 Huang
                 <span className="terminal-cursor" aria-hidden="true" />
-              </p>
-            </div>
+              </span>
+            </h1>
 
             <div
               className="h-px max-w-xs mb-6 animate-fade-up"

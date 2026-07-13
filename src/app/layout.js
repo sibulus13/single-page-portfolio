@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
     >
       <body
         id="home"
-        className="p-4 px-10 lg:px-40 grid mx-auto font-body"
+        className="p-4 px-10 lg:px-40 grid mx-auto max-w-[1600px] font-body"
       >
         <Providers>
           <StructuredData />

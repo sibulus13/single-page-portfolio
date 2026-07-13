@@ -6,10 +6,12 @@ const contacts = [
   {
     icon: <FaLinkedin />,
     link: "https://www.linkedin.com/in/sibulus0/",
+    label: "LinkedIn",
   },
   {
     icon: <FaGithub />,
     link: "https://github.com/sibulus13",
+    label: "GitHub",
   },
 ];
 
@@ -22,6 +24,8 @@ const Contacts: React.FC = () => {
           key={index}
           href={contact.link}
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label={contact.label}
         >
           {contact.icon}
         </Link>
