@@ -11,13 +11,12 @@ const experiences = [
     description:
       "Accelerated engineering velocity 2–3× by introducing agentic AI workflows into the development cycle. \
       Reduced AWS infrastructure costs by 30% through Lambda and CDK optimization. \
-      Architected and maintained backend systems with TypeScript, Bitbucket CI/CD, and Datadog observability.",
+      Architected and maintained backend systems with TypeScript and Bitbucket CI/CD.",
     tags: [
       "TypeScript",
       "AWS Lambda",
       "AWS CDK",
       "Bitbucket CI/CD",
-      "Datadog",
       "Claude Code",
       "Cursor",
     ],
@@ -59,6 +58,7 @@ const experiences = [
       "Django",
       "HTML & CSS",
       "Salesforce",
+      "Datadog",
     ],
   },
   {
