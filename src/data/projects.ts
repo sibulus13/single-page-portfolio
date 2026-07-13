@@ -17,6 +17,20 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "miko",
+    name: "Miko (Pythia)",
+    tier: 1,
+    status: "live",
+    tagline: "Guardrailed multi-tenant RAG chatbot — shipped as a commercial SaaS",
+    description:
+      "Multi-tenant RAG chatbot platform sold as a productized SaaS. Supabase pgvector retrieval pipeline, deterministic eval gate that blocks deploys on info leaks, durable cross-instance rate limiting, and Stripe subscription billing with webhook-driven tenant activation. Live in production on michaelhuang.ca and si8tech.com.",
+    stack: ["RAG", "pgvector", "Stripe", "multi-tenant", "evals", "Next.js", "TypeScript", "Supabase"],
+    live_url: "https://www.si8tech.com/miko",
+    source_url: null,
+    source_visibility: "private",
+    featured: true,
+  },
+  {
     id: "tarive",
     name: "Tarive",
     tier: 1,
@@ -24,7 +38,7 @@ export const projects: Project[] = [
     tagline: "AI-powered personal finance — no spreadsheets, no manual entry",
     description:
       "Personal finance platform that auto-connects to bank accounts via Plaid, categorizes transactions using AI, and surfaces insights including a life-cost annotation (spending expressed as hours of working life), 20-year net worth projections, and an AI chat assistant.",
-    stack: ["Next.js", "TypeScript", "Supabase", "Plaid", "Claude API"],
+    stack: ["Next.js", "TypeScript", "Supabase", "Plaid", "Gemini"],
     live_url: "https://tarive.vercel.app/home",
     source_url: null,
     source_visibility: "private",
@@ -84,8 +98,8 @@ export const projects: Project[] = [
       "Discord bot managing court booking waitlists, session announcements, and member coordination. Actively used by real club members.",
     stack: ["Python", "Firebase", "GCP", "Discord API"],
     live_url: null,
-    source_url: "https://github.com/sibulus13",
-    source_visibility: "public",
+    source_url: null,
+    source_visibility: "private",
     featured: false,
   },
   {
@@ -112,7 +126,7 @@ export const projects: Project[] = [
       "Algorithmic trading system using Python and ML to generate buy/sell signals across a portfolio of 13 symbols. Multiple strategy models with a backtesting framework.",
     stack: ["Python", "Pandas", "scikit-learn"],
     live_url: null,
-    source_url: "https://github.com/sibulus13",
+    source_url: "https://github.com/sibulus13/Algo-Trader",
     source_visibility: "public",
     featured: false,
   },
@@ -126,7 +140,7 @@ export const projects: Project[] = [
       "Full-stack social platform for hyperlocal anonymous discussion. Features location-based post discovery, anonymous identity management, and real-time interactions.",
     stack: ["Next.js", "TypeScript", "PostgreSQL"],
     live_url: null,
-    source_url: "https://github.com/sibulus13",
+    source_url: "https://github.com/sibulus13/aynon-web",
     source_visibility: "public",
     featured: false,
   },
@@ -140,8 +154,8 @@ export const projects: Project[] = [
       "Constraint-solving automation for semester and quarterly course planning at a university departmental level. Addressed bottleneck classes caused by conflicting offerings — a previously manual, error-prone process.",
     stack: ["Python"],
     live_url: null,
-    source_url: "https://github.com/sibulus13",
-    source_visibility: "public",
+    source_url: null,
+    source_visibility: "private",
     featured: false,
   },
   {
@@ -154,8 +168,8 @@ export const projects: Project[] = [
       "Real-time simulation of multiple autonomous agents navigating a shared grid with collision avoidance and cooperative path resolution. Demonstrates emergent coordination under dynamic conditions.",
     stack: ["Python", "Simulation"],
     live_url: null,
-    source_url: "https://github.com/sibulus13",
-    source_visibility: "public",
+    source_url: null,
+    source_visibility: "private",
     featured: false,
   },
   {
@@ -168,8 +182,8 @@ export const projects: Project[] = [
       "Kinematic simulation of a Stewart platform (parallel manipulator) as a 6-DOF racing simulator. Models the full motion envelope used in high-fidelity driving simulators. Built as part of Mechatronic Systems Engineering coursework.",
     stack: ["MATLAB", "Simulink", "Kinematics"],
     live_url: null,
-    source_url: "https://github.com/sibulus13",
-    source_visibility: "public",
+    source_url: null,
+    source_visibility: "private",
     featured: false,
   },
 ];
