@@ -11,19 +11,6 @@
   --font-body: 'Satoshi', system-ui, sans-serif;
   --font-mono: var(--font-mono, 'JetBrains Mono', 'Courier New', monospace);
 
-  /* Plum accent scale (H305°) */
-  --color-accent-50:   #FBF0FB;
-  --color-accent-100:  #F4D8F4;
-  --color-accent-200:  #E5AFDF;
-  --color-accent-300:  #D180CA;
-  --color-accent-400:  #C084C8;
-  --color-accent-500:  #A865A0;
-  --color-accent-600:  #8E4585;
-  --color-accent-700:  #7A3573;
-  --color-accent-800:  #641F5E;
-  --color-accent-900:  #4E1A4A;
-  --color-accent-950:  #371433;
-
   /* Spacing (8pt grid) */
   --space-1: 0.25rem;
   --space-2: 0.5rem;

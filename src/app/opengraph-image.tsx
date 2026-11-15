@@ -5,7 +5,16 @@ export const alt = "Michael Huang — AI-Native Full-Stack Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function Image() {
+// Same faces as the site (layout.js: Fraunces display, JetBrains Mono meta); edge has no system fonts.
+const DISPLAY_FONT = "Fraunces";
+const MONO_FONT = "JetBrains Mono";
+
+export default async function Image() {
+  const [display, mono] = await Promise.all([
+    fetch(new URL("./_og-fonts/fraunces-700.woff", import.meta.url)).then((r) => r.arrayBuffer()),
+    fetch(new URL("./_og-fonts/jetbrains-mono-400.woff", import.meta.url)).then((r) => r.arrayBuffer()),
+  ]);
+
   return new ImageResponse(
     (
       <div
@@ -16,7 +25,7 @@ export default function Image() {
           display: "flex",
           flexDirection: "column",
           padding: "72px 80px",
-          fontFamily: "monospace",
+          fontFamily: MONO_FONT,
           position: "relative",
           overflow: "hidden",
         }}
@@ -27,7 +36,7 @@ export default function Image() {
             position: "absolute",
             inset: 0,
             backgroundImage:
-              "radial-gradient(circle, rgba(142,69,133,0.10) 1px, transparent 1px)",
+              "radial-gradient(circle, rgba(251,146,60,0.10) 1px, transparent 1px)",
             backgroundSize: "32px 32px",
           }}
         />
@@ -77,11 +86,11 @@ export default function Image() {
           <span
             style={{
               fontSize: 112,
-              fontWeight: 800,
+              fontWeight: 700,
               color: "#fafafa",
               lineHeight: 0.88,
               letterSpacing: "-4px",
-              fontFamily: "Georgia, serif",
+              fontFamily: DISPLAY_FONT,
             }}
           >
             Michael
@@ -89,11 +98,11 @@ export default function Image() {
           <span
             style={{
               fontSize: 112,
-              fontWeight: 800,
-              color: "#C084C8",
+              fontWeight: 700,
+              color: "#FB923C",
               lineHeight: 0.88,
               letterSpacing: "-4px",
-              fontFamily: "Georgia, serif",
+              fontFamily: DISPLAY_FONT,
             }}
           >
             Huang
@@ -119,20 +128,26 @@ export default function Image() {
             position: "relative",
           }}
         >
-          <span style={{ color: "#a1a1aa", fontSize: 18, fontFamily: "monospace" }}>
+          <span style={{ color: "#a1a1aa", fontSize: 18, fontFamily: MONO_FONT }}>
             AI-Native Full-Stack Engineer
           </span>
           <span style={{ color: "#3f3f46", fontSize: 18 }}>·</span>
-          <span style={{ color: "#71717a", fontSize: 18, fontFamily: "monospace" }}>
+          <span style={{ color: "#71717a", fontSize: 18, fontFamily: MONO_FONT }}>
             SI8 Technology
           </span>
           <span style={{ color: "#3f3f46", fontSize: 18 }}>·</span>
-          <span style={{ color: "#71717a", fontSize: 18, fontFamily: "monospace" }}>
+          <span style={{ color: "#71717a", fontSize: 18, fontFamily: MONO_FONT }}>
             michaelhuang.ca
           </span>
         </div>
       </div>
     ),
-    { ...size }
+    {
+      ...size,
+      fonts: [
+        { name: DISPLAY_FONT, data: display, weight: 700, style: "normal" },
+        { name: MONO_FONT, data: mono, weight: 400, style: "normal" },
+      ],
+    }
   );
 }
